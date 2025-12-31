@@ -1,0 +1,201 @@
+/* =================== Global Styles =================== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* =================== Navbar Styling =================== */
+.navbar {
+    background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .fancy-logo {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.navbar .fancy-logo:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+.navbar .nav-link {
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+    color: #007bff;
+}
+
+/* =================== Containers =================== */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =================== Buttons =================== */
+.btn {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* =================== Resume Page Styling =================== */
+.resume-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.resume-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.resume-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.resume-card ul li {
+    padding-left: 10px;
+    position: relative;
+}
+
+/* =================== Project Cards =================== */
+.card {
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Icons */
+.project-icon {
+    font-size: 50px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* =================== Progress Bar Animation =================== */
+.progress-container {
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 12px;
+    position: relative;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #007bff, #3399ff);
+    animation: fillProgress 2s ease-in-out forwards;
+}
+
+@keyframes fillProgress {
+    from { width: 0%; }
+    to { width: var(--progress-width, 100%); }
+}
+
+/* =================== Footer Styling =================== */
+.footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #666;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+}
+
+/* =================== Contact Page Styling =================== */
+.contact-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.contact-info p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.phone-list {
+    list-style: none;
+    padding: 0;
+}
+
+.phone-list li {
+    margin-bottom: 5px;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* =================== Social Media Icons =================== */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    font-size: 30px;
+    color: #007bff;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    color: #0056b3;
+}
+
+/* =================== Portfolio Image Styling =================== */
+.portfolio-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
