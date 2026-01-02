@@ -1,4 +1,5 @@
 const contactEndpoint = 'https://api.caynetic.app/submit/cmklein';
+let turnstileWidgetId = null;
 
 document.addEventListener('DOMContentLoaded', () => {
 	initContactForm();
@@ -7,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function initContactForm() {
 	const form = document.getElementById('contact-form');
 	const status = document.getElementById('status');
-	const widget = document.querySelector('.cf-turnstile');
+	const widget = document.getElementById('turnstile-container');
 
 	if (!form || !status || !widget) return;
 
@@ -16,11 +17,13 @@ async function initContactForm() {
 }
 
 function renderTurnstile(widget) {
+	if (turnstileWidgetId) return Promise.resolve();
 	return new Promise((resolve) => {
-		if (widget.querySelector('iframe')) return resolve();
 		const attempt = (tries) => {
 			if (window.turnstile && window.turnstile.render) {
-				window.turnstile.render(widget, { sitekey: widget.dataset.sitekey });
+				turnstileWidgetId = window.turnstile.render('#turnstile-container', {
+					sitekey: widget.dataset.sitekey
+				});
 				return resolve();
 			}
 			if (tries <= 0) return resolve();
@@ -68,8 +71,8 @@ function wireForm(form, status, widget) {
 			if (res.ok) {
 				setStatus(status, 'Sent successfully', 'success');
 				form.reset();
-				if (window.turnstile && window.turnstile.reset) {
-					window.turnstile.reset(widget);
+				if (window.turnstile && window.turnstile.reset && turnstileWidgetId) {
+					window.turnstile.reset(turnstileWidgetId);
 				}
 			} else {
 				setStatus(status, `Error: ${body.error || 'unknown error'}`, 'error');
