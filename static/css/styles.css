@@ -191,6 +191,12 @@ body {
     padding: 10px 12px;
 }
 
+.contact-form .form-control.field-error,
+.contact-form textarea.field-error {
+	border-color: #dc3545;
+	box-shadow: 0 0 0 0.15rem rgba(220, 53, 69, 0.2);
+}
+
 .contact-form textarea {
     min-height: 140px;
     resize: vertical;
@@ -203,18 +209,28 @@ body {
 .status {
     margin-top: 12px;
     font-weight: 600;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    border: 1px solid transparent;
 }
 
 .status-success {
     color: #0f5132;
+	background: #d1e7dd;
+	border-color: #badbcc;
 }
 
 .status-error {
     color: #842029;
+	background: #f8d7da;
+	border-color: #f5c2c7;
 }
 
 .status-pending {
     color: #0a58ca;
+	background: #e7f1ff;
+	border-color: #cfe2ff;
 }
 
 /* =================== Social Media Icons =================== */

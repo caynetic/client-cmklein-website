@@ -34,14 +34,25 @@ function renderTurnstile(widget) {
 }
 
 function wireForm(form, status, widget) {
+	const inputs = form.querySelectorAll('input, textarea');
+	inputs.forEach((el) => {
+		el.addEventListener('input', () => {
+			if (el.classList.contains('field-error')) {
+				el.classList.remove('field-error');
+			}
+		});
+	});
+
 	form.addEventListener('submit', async (event) => {
 		event.preventDefault();
-		setStatus(status, 'Sending...', 'pending');
 
+		if (!validateForm(form, status)) return;
+
+		setStatus(status, 'Sending...', 'pending');
 		const formData = new FormData(form);
 
 		if (formData.get('company')) {
-			setStatus(status, 'Error: invalid submission', 'error');
+			setStatus(status, 'Unable to send right now. Please try again.', 'error');
 			return;
 		}
 
@@ -66,19 +77,19 @@ function wireForm(form, status, widget) {
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(payload)
 			});
-			const body = await res.json().catch(() => ({}));
 
 			if (res.ok) {
 				setStatus(status, 'Sent successfully', 'success');
 				form.reset();
+				inputs.forEach((el) => el.classList.remove('field-error'));
 				if (window.turnstile && window.turnstile.reset && turnstileWidgetId) {
 					window.turnstile.reset(turnstileWidgetId);
 				}
 			} else {
-				setStatus(status, `Error: ${body.error || 'unknown error'}`, 'error');
+				setStatus(status, 'Unable to send right now. Please try again.', 'error');
 			}
 		} catch (err) {
-			setStatus(status, 'Network error, try again.', 'error');
+			setStatus(status, 'Unable to send right now. Please try again.', 'error');
 		}
 	});
 }
@@ -86,4 +97,31 @@ function wireForm(form, status, widget) {
 function setStatus(el, text, state) {
 	el.textContent = text;
 	el.className = state ? `status status-${state}` : 'status';
+}
+
+function validateForm(form, status) {
+	const requiredFields = ['name', 'email', 'message'];
+	let valid = true;
+
+	requiredFields.forEach((fieldName) => {
+		const field = form.querySelector(`#${fieldName}`);
+		if (!field) return;
+
+		const value = field.value.trim();
+		let isValid = value.length > 0;
+		if (fieldName === 'email') {
+			isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+		}
+
+		if (!isValid) {
+			valid = false;
+			field.classList.add('field-error');
+		}
+	});
+
+	if (!valid) {
+		setStatus(status, 'Please fill in the required fields.', 'error');
+	}
+
+	return valid;
 }
