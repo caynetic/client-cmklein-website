@@ -171,6 +171,52 @@ body {
     text-decoration: underline;
 }
 
+.contact-form-wrapper {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form {
+    display: grid;
+    gap: 15px;
+}
+
+.contact-form .form-control,
+.contact-form textarea {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 10px 12px;
+}
+
+.contact-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.hidden {
+    display: none;
+}
+
+.status {
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+.status-success {
+    color: #0f5132;
+}
+
+.status-error {
+    color: #842029;
+}
+
+.status-pending {
+    color: #0a58ca;
+}
+
 /* =================== Social Media Icons =================== */
 .social-icons {
     display: flex;
