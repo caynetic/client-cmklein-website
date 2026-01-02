@@ -17,6 +17,7 @@ async function initContactForm() {
 
 function renderTurnstile(widget) {
 	return new Promise((resolve) => {
+		if (widget.querySelector('iframe')) return resolve();
 		const attempt = (tries) => {
 			if (window.turnstile && window.turnstile.render) {
 				window.turnstile.render(widget, { sitekey: widget.dataset.sitekey });
