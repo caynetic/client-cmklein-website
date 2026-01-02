@@ -46,7 +46,10 @@ function wireForm(form, status, widget) {
 	form.addEventListener('submit', async (event) => {
 		event.preventDefault();
 
-		if (!validateForm(form, status)) return;
+		if (!validateForm(form)) {
+			setStatus(status, '', null);
+			return;
+		}
 
 		setStatus(status, 'Sending...', 'pending');
 		const formData = new FormData(form);
@@ -99,7 +102,7 @@ function setStatus(el, text, state) {
 	el.className = state ? `status status-${state}` : 'status';
 }
 
-function validateForm(form, status) {
+function validateForm(form) {
 	const requiredFields = ['name', 'email', 'message'];
 	let valid = true;
 
@@ -118,10 +121,6 @@ function validateForm(form, status) {
 			field.classList.add('field-error');
 		}
 	});
-
-	if (!valid) {
-		setStatus(status, 'Please fill in the required fields.', 'error');
-	}
 
 	return valid;
 }
