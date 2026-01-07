@@ -18,7 +18,7 @@ A modern, responsive portfolio website for Christopher Klein, showcasing project
 - **Icons**: Font Awesome 6.4.0
 - **Backend Integration**: Contact form API endpoint
 - **Security**: Cloudflare Turnstile CAPTCHA
-- **Deployment**: Static hosting (GitHub Pages, Netlify, etc.)
+- **Deployment**: Cloudflare Pages
 
 ## 📁 Project Structure
 
@@ -43,6 +43,7 @@ client-cmklein-website/
 ### Prerequisites
 
 - A web browser (Chrome, Firefox, Safari, etc.)
+- Git (for cloning the repository)
 - A local web server (optional, for development)
 
 ### Installation
@@ -96,12 +97,13 @@ client-cmklein-website/
 
 ## 🌐 Deployment
 
-This is a static website that can be deployed to any static hosting service:
+This static website is hosted on Cloudflare Pages. The site is automatically deployed from the GitHub repository.
 
-- **GitHub Pages**: Push to a GitHub repository and enable Pages
-- **Netlify**: Connect repository for automatic deployments
-- **Vercel**: Deploy with zero configuration
-- **AWS S3 + CloudFront**: For scalable hosting
+For local development or manual deployment:
+
+1. Push your code to the GitHub repository: `https://github.com/caynetic/client-cmklein-website`
+2. Cloudflare Pages will automatically build and deploy changes
+3. If deploying manually to other platforms, this is a static site with no build step required
 
 ## 🤝 Contributing
 
