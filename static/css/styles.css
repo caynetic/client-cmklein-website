@@ -82,6 +82,21 @@
     border-color: #2563eb;
 }
 
+@media (max-width: 640px) {
+    .site-nav-inner {
+        align-items: flex-start;
+    }
+
+    .site-nav-list {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .site-nav-list li {
+        flex: 0 0 auto;
+    }
+}
+
 @media (prefers-reduced-motion: no-preference) {
     main section.rounded-2xl,
     main section.rounded-3xl,
