@@ -1,5 +1,6 @@
 const contactEndpoint = 'https://api.caynetic.app/submit/cmklein';
 let turnstileWidgetId = null;
+const turnstileScriptSrc = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
 
 document.addEventListener('DOMContentLoaded', () => {
 	initContactForm();
@@ -12,8 +13,49 @@ async function initContactForm() {
 
 	if (!form || !status || !widget) return;
 
-	await renderTurnstile(widget);
-	wireForm(form, status, widget);
+	const turnstileEnabled = shouldEnableTurnstile(widget);
+	if (turnstileEnabled) {
+		await ensureTurnstileScript();
+		await renderTurnstile(widget);
+	} else {
+		widget.classList.add('hidden');
+	}
+
+	wireForm(form, status, turnstileEnabled);
+}
+
+function shouldEnableTurnstile(widget) {
+	const hostname = window.location.hostname;
+	const isLocal = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
+	return !isLocal && Boolean(widget?.dataset?.sitekey);
+}
+
+function ensureTurnstileScript() {
+	if (window.turnstile && window.turnstile.render) return Promise.resolve();
+
+	const existing = document.querySelector(`script[src="${turnstileScriptSrc}"]`);
+	if (existing) {
+		return new Promise((resolve) => {
+			const attempt = (tries) => {
+				if (window.turnstile && window.turnstile.render) {
+					return resolve();
+				}
+				if (tries <= 0) return resolve();
+				setTimeout(() => attempt(tries - 1), 150);
+			};
+			attempt(20);
+		});
+	}
+
+	return new Promise((resolve) => {
+		const script = document.createElement('script');
+		script.src = turnstileScriptSrc;
+		script.async = true;
+		script.defer = true;
+		script.onload = () => resolve();
+		script.onerror = () => resolve();
+		document.head.appendChild(script);
+	});
 }
 
 function renderTurnstile(widget) {
@@ -33,7 +75,7 @@ function renderTurnstile(widget) {
 	});
 }
 
-function wireForm(form, status, widget) {
+function wireForm(form, status, turnstileEnabled) {
 	const inputs = form.querySelectorAll('input, textarea');
 	inputs.forEach((el) => {
 		el.addEventListener('input', () => {
@@ -60,7 +102,7 @@ function wireForm(form, status, widget) {
 		}
 
 		const token = formData.get('cf-turnstile-response');
-		if (!token) {
+		if (turnstileEnabled && !token) {
 			setStatus(status, 'Please complete the verification.', 'error');
 			return;
 		}
