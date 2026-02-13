@@ -99,7 +99,11 @@ function wireForm(form, status, widget) {
 
 function setStatus(el, text, state) {
 	el.textContent = text;
-	el.className = state ? `status status-${state}` : 'status';
+	if (!text || !state) {
+		el.className = 'status hidden';
+		return;
+	}
+	el.className = `status status-${state}`;
 }
 
 function validateForm(form) {

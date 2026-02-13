@@ -13,7 +13,7 @@
     <meta name="author" content="Christopher Klein">
     <meta name="keywords" content="Christopher Klein, software engineer, portfolio, projects, resume">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/tailwind.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="static/css/styles.css">
 
@@ -46,51 +46,49 @@
     
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 </head>
-<body>
+<body class="bg-zinc-50 text-zinc-900 antialiased">
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold fancy-logo" href="/">cmklein</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#top">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
+    <nav class="sticky top-0 z-50 border-b-2 border-zinc-900 bg-yellow-200/90 backdrop-blur">
+        <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4">
+            <a class="text-xl font-black tracking-tight" href="/">cmklein</a>
+            <ul class="flex flex-wrap items-center gap-2 text-sm font-semibold">
+                <li><a class="rounded-full border-2 border-zinc-900 bg-zinc-900 px-4 py-1.5 text-white" href="#top">Home</a></li>
+                <li><a class="rounded-full border-2 border-zinc-900 px-4 py-1.5 hover:bg-zinc-900 hover:text-white" href="projects.html">Projects</a></li>
+                <li><a class="rounded-full border-2 border-zinc-900 px-4 py-1.5 hover:bg-zinc-900 hover:text-white" href="resume.html">Resume</a></li>
+                <li><a class="rounded-full border-2 border-zinc-900 px-4 py-1.5 hover:bg-zinc-900 hover:text-white" href="contact.html">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <div class="container mt-5">
-        <div class="text-center">
-    <h1 class="fw-bold">Welcome to My Portfolio</h1>
-    <img src="static/images/portfolio-image.JPG" alt="Portfolio Image" class="portfolio-image">
-
-    <div class="mt-4">
-        <a href="projects.html" class="btn btn-primary btn-lg">View Projects</a>
-        <a href="resume.html" class="btn btn-outline-secondary btn-lg">View Resume</a>
+    <main class="mx-auto max-w-6xl px-4 py-12 sm:py-16">
+        <section class="grid gap-8 rounded-3xl border-2 border-zinc-900 bg-white p-6 shadow-[8px_8px_0_0_#18181b] md:grid-cols-2 md:items-center md:p-10">
+            <div class="space-y-6">
+                <p class="inline-flex rounded-full border-2 border-zinc-900 bg-yellow-200 px-3 py-1 text-xs font-bold uppercase tracking-wide">Bahamas-based • Caribbean-first • Community-first</p>
+                <h1 class="text-4xl font-black leading-tight sm:text-5xl">Hand-built digital products for the Caribbean.</h1>
+                <p class="max-w-xl text-base text-zinc-700 sm:text-lg">I build secure, practical software for real regional workflows — from SaaS platforms to automation and document systems.</p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="projects.html" class="rounded-full border-2 border-zinc-900 bg-zinc-900 px-6 py-3 text-sm font-bold text-white hover:bg-zinc-700">View Projects</a>
+                    <a href="resume.html" class="rounded-full border-2 border-zinc-900 bg-white px-6 py-3 text-sm font-bold hover:bg-zinc-100">View Resume</a>
+                </div>
+            </div>
+            <div class="rounded-2xl border-2 border-zinc-900 bg-zinc-100 p-3">
+                <img src="static/images/portfolio-image.JPG" alt="Portfolio Image" class="h-full w-full rounded-xl border-2 border-zinc-900 object-cover">
+            </div>
     </div>
-</div>
-    </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <p>Created by Christopher Klein</p>
-        <div class="social-icons">
-            <a href="https://github.com/caynetic/client-cmklein-website" target="_blank" class="social-icon">
+    <footer class="border-t-2 border-zinc-900 bg-white">
+        <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-6 text-sm">
+            <p class="font-medium">Created by Christopher Klein</p>
+            <a href="https://github.com/caynetic/client-cmklein-website" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-semibold hover:underline">
                 <i class="fab fa-github"></i> GitHub
             </a>
         </div>
     </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
 </body>
 </html>

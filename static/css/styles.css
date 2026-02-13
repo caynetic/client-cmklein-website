@@ -1,127 +1,19 @@
-/* =================== Global Styles =================== */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-}
-
-/* =================== Navbar Styling =================== */
-.navbar {
-    background-color: #ffffff;
-    padding: 15px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.navbar .fancy-logo {
-    font-size: 24px;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    color: #000;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.navbar .fancy-logo:hover {
-    opacity: 0.8;
-    text-decoration: none;
-}
-
-.navbar .nav-link {
-    color: #333;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.navbar .nav-link:hover {
-    color: #007bff;
-}
-
-/* =================== Containers =================== */
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* =================== Buttons =================== */
-.btn {
-    border-radius: 30px;
-    padding: 10px 20px;
-    font-size: 16px;
-}
-
-.btn-primary {
-    background-color: #007bff;
-    color: white;
-    border: none;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-}
-
-/* =================== Resume Page Styling =================== */
-.resume-card {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.resume-card:hover {
-    transform: none !important;
-    box-shadow: none !important;
-}
-
-.resume-card ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.resume-card ul li {
-    padding-left: 10px;
-    position: relative;
-}
-
-/* =================== Project Cards =================== */
-.card {
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    text-align: center;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Project Icons */
-.project-icon {
-    font-size: 50px;
-    color: #007bff;
-    margin-bottom: 10px;
-}
-
 /* =================== Progress Bar Animation =================== */
 .progress-container {
     width: 100%;
-    background-color: #e9ecef;
+    background-color: #e4e4e7;
     border-radius: 8px;
     overflow: hidden;
     height: 12px;
     position: relative;
+    border: 2px solid #18181b;
 }
 
 .progress-bar {
     width: 0%;
     height: 100%;
     border-radius: 8px;
-    background: linear-gradient(90deg, #007bff, #3399ff);
+    background: linear-gradient(90deg, #18181b, #3f3f46);
     animation: fillProgress 2s ease-in-out forwards;
 }
 
@@ -130,55 +22,7 @@ body {
     to { width: var(--progress-width, 100%); }
 }
 
-/* =================== Footer Styling =================== */
-.footer {
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-    font-size: 14px;
-    color: #666;
-    background-color: #f8f9fa;
-    border-top: 1px solid #ddd;
-}
-
-/* =================== Contact Page Styling =================== */
-.contact-info {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.contact-info p {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.phone-list {
-    list-style: none;
-    padding: 0;
-}
-
-.phone-list li {
-    margin-bottom: 5px;
-}
-
-.contact-info a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
-.contact-form-wrapper {
-    background: #ffffff;
-    border: 1px solid #e9ecef;
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
+/* =================== Contact Form =================== */
 .contact-form {
     display: grid;
     gap: 15px;
@@ -186,20 +30,24 @@ body {
 
 .contact-form .form-control,
 .contact-form textarea {
-    border-radius: 8px;
-    border: 1px solid #ced4da;
-    padding: 10px 12px;
+    width: 100%;
+    border-radius: 9999px;
+    border: 2px solid #18181b;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    background: #fff;
 }
 
 .contact-form .form-control.field-error,
 .contact-form textarea.field-error {
-	border-color: #dc3545;
-	box-shadow: 0 0 0 0.15rem rgba(220, 53, 69, 0.2);
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
 }
 
 .contact-form textarea {
     min-height: 140px;
     resize: vertical;
+    border-radius: 0 !important;
 }
 
 .hidden {
@@ -210,54 +58,56 @@ body {
     margin-top: 12px;
     font-weight: 600;
     padding: 10px 12px;
-    border-radius: 8px;
-    background: #f8f9fa;
-    border: 1px solid transparent;
+    border-radius: 0.75rem;
+    background: #fafafa;
+    border: 2px solid #18181b;
+    min-height: 46px;
 }
 
 .status-success {
-    color: #0f5132;
-	background: #d1e7dd;
-	border-color: #badbcc;
+    color: #14532d;
+    background: #dcfce7;
+    border-color: #15803d;
 }
 
 .status-error {
-    color: #842029;
-	background: #f8d7da;
-	border-color: #f5c2c7;
+    color: #7f1d1d;
+    background: #fee2e2;
+    border-color: #dc2626;
 }
 
 .status-pending {
-    color: #0a58ca;
-	background: #e7f1ff;
-	border-color: #cfe2ff;
+    color: #1e3a8a;
+    background: #dbeafe;
+    border-color: #2563eb;
 }
 
-/* =================== Social Media Icons =================== */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
-}
+@media (prefers-reduced-motion: no-preference) {
+    main section.rounded-2xl,
+    main section.rounded-3xl,
+    main article.rounded-2xl {
+        transition: transform 160ms ease, box-shadow 160ms ease;
+    }
 
-.social-icon {
-    font-size: 30px;
-    color: #007bff;
-    text-decoration: none;
-    transition: transform 0.3s ease-in-out;
-}
+    main section.rounded-2xl:hover,
+    main section.rounded-3xl:hover,
+    main article.rounded-2xl:hover {
+        transform: translateY(-4px);
+        box-shadow: 10px 10px 0 0 #18181b;
+    }
 
-.social-icon:hover {
-    transform: scale(1.1);
-    color: #0056b3;
-}
+    a.rounded-full.border-2,
+    button.rounded-full.border-2 {
+        transition: transform 120ms ease, background-color 120ms ease, color 120ms ease;
+    }
 
-/* =================== Portfolio Image Styling =================== */
-.portfolio-image {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
+    a.rounded-full.border-2:hover,
+    button.rounded-full.border-2:hover {
+        transform: translateY(-1px);
+    }
+
+    a.rounded-full.border-2:active,
+    button.rounded-full.border-2:active {
+        transform: translateY(1px) scale(0.99);
+    }
 }
