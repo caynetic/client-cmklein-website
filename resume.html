@@ -73,10 +73,6 @@
         <header class="mb-8">
             <h1 class="text-4xl font-black tracking-tight sm:text-5xl">Christopher M. Klein</h1>
             <p class="mt-3 text-zinc-700">Founder, Builder, and AI Systems Engineer Focused on Caribbean-First Software</p>
-            <button id="download-resume-btn" type="button" class="mt-4 inline-flex items-center gap-2 rounded-full border-2 border-zinc-900 bg-zinc-900 px-4 py-2 text-sm font-semibold text-white hover:bg-white hover:text-zinc-900">
-                <i class="fa-solid fa-file-pdf"></i>
-                Download PDF
-            </button>
         </header>
 
         <div class="space-y-6">
@@ -215,38 +211,5 @@
         </div>
     </footer>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const button = document.getElementById('download-resume-btn');
-            const resumeContent = document.getElementById('resume-content');
-            if (!button || !resumeContent) return;
-
-            button.addEventListener('click', () => {
-                if (!window.html2pdf) {
-                    window.print();
-                    return;
-                }
-
-                const originalText = button.innerHTML;
-                button.disabled = true;
-                button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Preparing PDF...';
-
-                const options = {
-                    margin: 0.4,
-                    filename: 'Christopher-M-Klein-Resume.pdf',
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2, useCORS: true },
-                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-                    pagebreak: { mode: ['css', 'legacy'] }
-                };
-
-                window.html2pdf().set(options).from(resumeContent).save().finally(() => {
-                    button.disabled = false;
-                    button.innerHTML = originalText;
-                });
-            });
-        });
-    </script>
 </body>
 </html>
