@@ -1,4 +1,4 @@
-const contactEndpoint = 'https://api.caynetic.app/submit/cmklein';
+const contactEndpoint = 'https://inbox.caynetic.online/webforms/submit/cmklein';
 let turnstileWidgetId = null;
 const turnstileScriptSrc = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
 
