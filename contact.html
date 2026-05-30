@@ -12,7 +12,7 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Christopher Klein">
     <meta name="keywords" content="Contact Christopher Klein, software developer contact, Caribbean technology partnerships, Caynetic">
-    <meta name="theme-color" content="#fef08a">
+    <meta name="theme-color" content="#ff7ac8">
     <meta name="format-detection" content="telephone=no">
 
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://cdn.tailwindcss.com https://challenges.cloudflare.com https://static.cloudflareinsights.com; connect-src 'self' https://inbox.caynetic.online https://cdn.jsdelivr.net https://cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; img-src 'self' data:; font-src 'self' https://cdnjs.cloudflare.com; frame-src https://challenges.cloudflare.com;">
@@ -53,42 +53,61 @@
     
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 </head>
-<body class="bg-zinc-50 text-zinc-900 antialiased">
+<body class="site-shell antialiased">
 
     <!-- Navbar -->
-    <nav class="sticky top-0 z-50 border-b-2 border-zinc-900 bg-yellow-200/90 backdrop-blur">
+    <nav class="site-nav sticky top-0 z-50">
         <div class="site-nav-inner mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4">
-            <a class="text-xl font-black tracking-tight" href="/">cmklein</a>
+            <a class="site-logo text-xl" href="/">cm<span>klein</span></a>
             <ul class="site-nav-list flex flex-wrap items-center gap-2 text-sm font-semibold">
-                <li><a class="rounded-full border-2 border-zinc-900 px-4 py-1.5 hover:bg-zinc-900 hover:text-white" href="index.html">Home</a></li>
-                <li><a class="rounded-full border-2 border-zinc-900 px-4 py-1.5 hover:bg-zinc-900 hover:text-white" href="projects.html">Projects</a></li>
-                <li><a class="rounded-full border-2 border-zinc-900 px-4 py-1.5 hover:bg-zinc-900 hover:text-white" href="resume.html">Resume</a></li>
-                <li><a class="rounded-full border-2 border-zinc-900 bg-zinc-900 px-4 py-1.5 text-white" href="#top">Contact</a></li>
+                <li><a class="nav-pill" href="index.html">Home</a></li>
+                <li><a class="nav-pill" href="projects.html">Projects</a></li>
+                <li><a class="nav-pill" href="resume.html">Resume</a></li>
+                <li><a class="nav-pill nav-pill-active" href="#top">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="mx-auto max-w-6xl px-4 py-12 sm:py-16">
-        <div class="grid gap-6 md:grid-cols-2">
-            <section class="rounded-2xl border-2 border-zinc-900 bg-white p-6 shadow-[6px_6px_0_0_#18181b]">
-                <h1 class="text-4xl font-black tracking-tight">Get in Touch</h1>
-                <p class="mt-3 text-zinc-700">I’m open to collaborations, product ideas, and regional partnerships.</p>
+        <section class="mb-9 max-w-3xl">
+            <h1 class="section-title text-4xl sm:text-5xl">Have a project, business idea, or workflow you want to automate?</h1>
+            <p class="section-copy mt-4">Whether it&rsquo;s a website, internal tool, AI workflow, or Caribbean-focused software idea, I&rsquo;m open to practical projects that solve real problems.</p>
+        </section>
 
-                <div class="mt-6 space-y-4">
-                    <p><span class="font-semibold">Email:</span> <a class="underline decoration-2 underline-offset-4" href="mailto:me@cmklein.com">me@cmklein.com</a></p>
-                    <p><span class="font-semibold">Phone:</span> <a class="underline decoration-2 underline-offset-4" href="tel:+12424232198">+1 (242) 423-2198</a></p>
-                    <div class="flex items-center gap-4 pt-2 text-xl">
-                        <a href="https://www.instagram.com/klein242.352/" target="_blank" rel="noopener" class="hover:opacity-70"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/12424232198" target="_blank" rel="noopener" class="hover:opacity-70"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.linkedin.com/in/christopher-klein-8278b6272/" target="_blank" rel="noopener" class="hover:opacity-70"><i class="fab fa-linkedin"></i></a>
-                    </div>
+        <div class="grid gap-6 md:grid-cols-[0.9fr_1.1fr]">
+            <section class="contact-card p-6">
+                <h2 class="text-2xl font-black">Direct Contact</h2>
+                <p class="mt-3">Use the fastest path for your project or collaboration request.</p>
+
+                <div class="mt-6 grid gap-3">
+                    <a class="contact-link" href="mailto:me@cmklein.com">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span><strong>Email</strong><br><span class="text-sm">me@cmklein.com</span></span>
+                    </a>
+                    <a class="contact-link" href="tel:+12424232198">
+                        <i class="fa-solid fa-phone"></i>
+                        <span><strong>Phone</strong><br><span class="text-sm">+1 (242) 423-2198</span></span>
+                    </a>
+                    <a class="contact-link" href="https://wa.me/12424232198" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i>
+                        <span><strong>WhatsApp</strong><br><span class="text-sm">Message directly</span></span>
+                    </a>
+                    <a class="contact-link" href="https://www.linkedin.com/in/christopher-klein-8278b6272/" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin"></i>
+                        <span><strong>LinkedIn</strong><br><span class="text-sm">Professional profile</span></span>
+                    </a>
+                    <a class="contact-link" href="https://www.facebook.com/christopher.klein.56863" target="_blank" rel="noopener">
+                        <i class="fab fa-facebook"></i>
+                        <span><strong>Facebook</strong><br><span class="text-sm">Christopher Klein</span></span>
+                    </a>
                 </div>
             </section>
 
-            <section class="rounded-2xl border-2 border-zinc-900 bg-white p-6 shadow-[6px_6px_0_0_#18181b]">
+            <section class="contact-card p-6">
                 <h2 class="text-2xl font-black">Send a Message</h2>
-                <form id="contact-form" class="contact-form mt-4" novalidate>
+                <p class="mt-3">Share the workflow, pain point, or product idea you want to make concrete.</p>
+                <form id="contact-form" class="contact-form mt-5" novalidate>
                     <div>
                         <label for="name" class="mb-1 block text-sm font-semibold">Name *</label>
                         <input id="name" name="name" type="text" class="form-control" autocomplete="name" required>
@@ -110,7 +129,7 @@
                         <input id="company" name="company" autocomplete="off" class="form-control">
                     </div>
                     <div id="turnstile-container" class="cf-turnstile" data-sitekey="0x4AAAAAACKOD0Ov9h6v8QXi"></div>
-                    <button type="submit" class="inline-flex w-fit rounded-lg border-2 border-zinc-900 bg-zinc-900 px-6 py-2 text-sm font-bold text-white hover:bg-zinc-700">Send</button>
+                    <button type="submit" class="btn btn-primary w-fit"><i class="fa-solid fa-paper-plane"></i> Send</button>
                 </form>
                 <div id="status" class="status hidden" role="status" aria-live="polite"></div>
             </section>
@@ -118,10 +137,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t-2 border-zinc-900 bg-white">
+    <footer class="site-footer">
         <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-6 text-sm">
             <p class="font-medium">Created by Christopher Klein</p>
-            <a href="https://github.com/caynetic/client-cmklein-website" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-semibold hover:underline">
+            <a href="https://github.com/caynetic/client-cmklein-website" target="_blank" rel="noopener" class="footer-github inline-flex items-center gap-2 font-semibold">
                 <i class="fab fa-github"></i> GitHub
             </a>
         </div>

@@ -12,14 +12,14 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Christopher Klein">
     <meta name="keywords" content="Christopher Klein resume, AI systems engineer, Caribbean software developer, Caynetic founder, SaaS engineer, prompt engineering, WhatsApp automation">
-    <meta name="theme-color" content="#fef08a">
+    <meta name="theme-color" content="#ff7ac8">
     <meta name="format-detection" content="telephone=no">
 
     <link rel="stylesheet" href="static/css/tailwind.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="static/css/styles.css">
 
-    <meta property="og:title" content="Resume — Christopher M. Klein | Founder & AI Systems Engineer">
+    <meta property="og:title" content="Resume — Christopher M. Klein | Founder &amp; AI Systems Engineer">
     <meta property="og:description" content="View Christopher M. Klein's resume: AI-integrated systems, SaaS engineering, WhatsApp automation, and Caribbean-first software delivery.">
     <meta property="og:image" content="https://www.cmklein.com/static/images/portfolio-image.JPG">
     <meta property="og:url" content="https://www.cmklein.com/resume.html">
@@ -28,7 +28,7 @@
     <meta property="og:locale" content="en_US">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Resume — Christopher M. Klein | Founder & AI Systems Engineer">
+    <meta name="twitter:title" content="Resume — Christopher M. Klein | Founder &amp; AI Systems Engineer">
     <meta name="twitter:description" content="View Christopher M. Klein's resume: AI-integrated systems, SaaS engineering, WhatsApp automation, and Caribbean-first software delivery.">
     <meta name="twitter:image" content="https://www.cmklein.com/static/images/portfolio-image.JPG">
     <meta name="twitter:url" content="https://www.cmklein.com/resume.html">
@@ -53,157 +53,164 @@
     
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 </head>
-<body class="bg-zinc-50 text-zinc-900 antialiased">
+<body class="site-shell antialiased">
 
     <!-- Navbar -->
-    <nav class="sticky top-0 z-50 border-b-2 border-zinc-900 bg-yellow-200/90 backdrop-blur">
+    <nav class="site-nav sticky top-0 z-50">
         <div class="site-nav-inner mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4">
-            <a class="text-xl font-black tracking-tight" href="/">cmklein</a>
+            <a class="site-logo text-xl" href="/">cm<span>klein</span></a>
             <ul class="site-nav-list flex flex-wrap items-center gap-2 text-sm font-semibold">
-                <li><a class="rounded-full border-2 border-zinc-900 px-4 py-1.5 hover:bg-zinc-900 hover:text-white" href="index.html">Home</a></li>
-                <li><a class="rounded-full border-2 border-zinc-900 px-4 py-1.5 hover:bg-zinc-900 hover:text-white" href="projects.html">Projects</a></li>
-                <li><a class="rounded-full border-2 border-zinc-900 bg-zinc-900 px-4 py-1.5 text-white" href="#top">Resume</a></li>
-                <li><a class="rounded-full border-2 border-zinc-900 px-4 py-1.5 hover:bg-zinc-900 hover:text-white" href="contact.html">Contact</a></li>
+                <li><a class="nav-pill" href="index.html">Home</a></li>
+                <li><a class="nav-pill" href="projects.html">Projects</a></li>
+                <li><a class="nav-pill nav-pill-active" href="#top">Resume</a></li>
+                <li><a class="nav-pill" href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main id="resume-content" class="mx-auto max-w-6xl px-4 py-12 sm:py-16">
-        <header class="mb-8">
-            <h1 class="text-4xl font-black tracking-tight sm:text-5xl">Christopher M. Klein</h1>
-            <p class="mt-3 text-zinc-700">AI Systems Engineer • Founder • Full-Stack Python Developer | Based in The Bahamas • Serving the Caribbean</p>
+        <header class="mb-10 grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+            <div>
+                <h1 class="section-title text-4xl sm:text-5xl">Christopher M. Klein</h1>
+                <p class="section-copy mt-4 max-w-3xl">AI Systems Engineer &bull; Founder &bull; Full-Stack Python Developer | Based in The Bahamas &bull; Serving the Caribbean</p>
+            </div>
+            <a href="contact.html" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Work With Me</a>
         </header>
 
-        <div class="space-y-6">
-            <section class="rounded-2xl border-2 border-zinc-900 bg-white p-6 shadow-[6px_6px_0_0_#18181b]">
-                <h2 class="text-2xl font-black">Professional Summary</h2>
-                <p class="mt-3 text-zinc-700">Founder and lead developer of Caynetic Ltd., a Caribbean-first software company building secure SaaS platforms, AI-powered systems, and open-source tools.</p>
-                <p class="mt-3 text-zinc-700">Hands-on experience designing structured LLM workflows, AI automation systems, OCR pipelines, and Linux-based production infrastructure. Strong background in validation systems, reliability engineering, and secure deployment for real-world operational environments.</p>
-            </section>
+        <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+            <div class="space-y-6">
+                <section class="resume-card">
+                    <h2 class="text-2xl font-black">Professional Summary</h2>
+                    <p class="mt-3">Founder and lead developer of Caynetic Ltd., a Caribbean-first software company building secure SaaS platforms, AI-powered systems, and open-source tools.</p>
+                    <p class="mt-3">Hands-on experience designing structured LLM workflows, AI automation systems, OCR pipelines, and Linux-based production infrastructure. Strong background in validation systems, reliability engineering, and secure deployment for real-world operational environments.</p>
+                </section>
 
-            <section class="rounded-2xl border-2 border-zinc-900 bg-white p-6 shadow-[6px_6px_0_0_#18181b]">
-                <h2 class="text-2xl font-black">Core Expertise</h2>
-                <ul class="mt-3 list-disc space-y-2 pl-6 text-zinc-700">
-                    <li>AI System Architecture &amp; Structured LLM Workflows</li>
-                    <li>Prompt Engineering &amp; Function Call Orchestration</li>
-                    <li>Linux-Based Production Systems &amp; Open-Source Tooling</li>
-                    <li>SaaS Platform Development &amp; Backend Architecture</li>
-                    <li>Automation &amp; OCR Document Processing</li>
-                    <li>Data Validation &amp; Hallucination Mitigation</li>
-                    <li>PostgreSQL &amp; Redis-Based Systems</li>
-                    <li>Cloud Infrastructure &amp; Deployment (DigitalOcean, Cloudflare)</li>
-                </ul>
-            </section>
+                <section class="resume-card">
+                    <h2 class="text-2xl font-black">Core Expertise</h2>
+                    <div class="tag-list mt-4">
+                        <span class="tag">AI System Architecture &amp; Structured LLM Workflows</span>
+                        <span class="tag">Prompt Engineering &amp; Function Call Orchestration</span>
+                        <span class="tag">Linux-Based Production Systems &amp; Open-Source Tooling</span>
+                        <span class="tag">SaaS Platform Development &amp; Backend Architecture</span>
+                        <span class="tag">Automation &amp; OCR Document Processing</span>
+                        <span class="tag">Data Validation &amp; Hallucination Mitigation</span>
+                        <span class="tag">PostgreSQL &amp; Redis-Based Systems</span>
+                        <span class="tag">Cloud Infrastructure &amp; Deployment (DigitalOcean, Cloudflare)</span>
+                    </div>
+                </section>
 
-            <section class="rounded-2xl border-2 border-zinc-900 bg-white p-6 shadow-[6px_6px_0_0_#18181b]">
-                <h2 class="text-2xl font-black">Professional Experience</h2>
+                <section class="resume-card">
+                    <h2 class="text-2xl font-black">Technical Skills</h2>
+                    <div class="skill-group mt-4">
+                        <p><strong>Languages:</strong> Python (advanced), SQL, HTML/CSS, JavaScript (basic)</p>
+                        <p><strong>Frameworks:</strong> Flask, Django, FastAPI (experience)</p>
+                        <p><strong>AI &amp; Automation:</strong> Prompt engineering, structured output design, function calling / tool orchestration, conversational AI systems, AI API integrations, hallucination mitigation strategies, AI-assisted personalization and summarization, automation scripting</p>
+                        <p><strong>Automation &amp; Document Systems:</strong> OCR tooling, python-docx, workflow scripting, data cleanup and transformation</p>
+                        <p><strong>Databases:</strong> PostgreSQL, MySQL concepts, SQL querying</p>
+                        <p><strong>Cloud &amp; Systems:</strong> Linux, Nginx, DigitalOcean, Cloudflare, deployment and operations fundamentals</p>
+                        <p><strong>Tools:</strong> Git / GitHub, VS Code</p>
+                    </div>
+                </section>
 
-                <div class="mt-5">
-                    <p class="font-bold">Founder &amp; Lead Developer — <a class="underline decoration-2 underline-offset-4" href="https://caynetic.com" target="_blank" rel="noopener">Caynetic Ltd.</a> | Nassau, Bahamas | 2025 – Present</p>
-                    <ul class="mt-2 list-disc space-y-1 pl-6 text-zinc-700">
-                        <li>Architect and deploy AI-powered production systems using structured prompting and controlled tool invocation</li>
-                        <li>Built conversational AI infrastructure including WhatsApp automation layers</li>
-                        <li>Designed validation frameworks enforcing deterministic structured outputs</li>
-                        <li>Operate Linux-based production environments running PostgreSQL, Redis, Nginx, and open-source tooling</li>
-                        <li>Maintain cloud infrastructure and deployment pipelines across DigitalOcean and Cloudflare</li>
-                        <li>Build and maintain open-source software under MIT licensing</li>
+                <section class="resume-card">
+                    <h2 class="text-2xl font-black">Education</h2>
+                    <p class="mt-3 font-semibold">Associate of Arts (A.A.), Focus: Computer Science &mdash; Santa Fe College | 2022&ndash;2024</p>
+                    <p class="mt-2 font-semibold">Dual Enrollment &mdash; Akhepran International Academy / Bahamas Institute of Technology | 2020</p>
+                </section>
+
+                <section class="resume-card">
+                    <h2 class="text-2xl font-black">Brand Statement</h2>
+                    <p class="mt-3 font-semibold">Based in The Bahamas &bull; Serving the Caribbean</p>
+                    <p class="mt-1 font-semibold">Community-first. Region-rooted.</p>
+                    <p class="mt-1 font-semibold">Engineered with clarity and security.</p>
+                </section>
+            </div>
+
+            <div class="space-y-6">
+                <section class="resume-card">
+                    <h2 class="text-2xl font-black">Professional Experience</h2>
+
+                    <div class="mt-5 border-t border-zinc-900/20 pt-5">
+                        <p class="font-bold">Founder &amp; Lead Developer &mdash; <a class="link-accent underline" href="https://caynetic.com" target="_blank" rel="noopener">Caynetic Ltd.</a> | Nassau, Bahamas | 2025 &ndash; Present</p>
+                        <ul class="list-disc space-y-1 pl-6">
+                            <li>Architect and deploy AI-powered production systems using structured prompting and controlled tool invocation</li>
+                            <li>Built conversational AI infrastructure including WhatsApp automation layers</li>
+                            <li>Designed validation frameworks enforcing deterministic structured outputs</li>
+                            <li>Operate Linux-based production environments running PostgreSQL, Redis, Nginx, and open-source tooling</li>
+                            <li>Maintain cloud infrastructure and deployment pipelines across DigitalOcean and Cloudflare</li>
+                            <li>Build and maintain open-source software under MIT licensing</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-5 border-t border-zinc-900/20 pt-5">
+                        <p class="font-bold">SaaS Product Owner / Lead Developer &mdash; <a class="link-accent underline" href="https://caribtrends.com" target="_blank" rel="noopener">CaribTrends</a> (Powered by <a class="link-accent underline" href="https://caynetic.com" target="_blank" rel="noopener">Caynetic</a>) | 2026 &ndash; Present</p>
+                        <ul class="list-disc space-y-1 pl-6">
+                            <li>Designed scalable backend architecture for a Caribbean-focused market intelligence SaaS</li>
+                            <li>Implemented automated insight pipelines with deterministic structured outputs</li>
+                            <li>Built profile-based data segmentation systems for repeatable regional analysis</li>
+                            <li>Engineered maintainable data workflows prioritizing consistency and clarity</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-5 border-t border-zinc-900/20 pt-5">
+                        <p class="font-bold">Product Developer &mdash; <a class="link-accent underline" href="https://caribinsights.com" target="_blank" rel="noopener">CaribInsights</a> (Powered by <a class="link-accent underline" href="https://caynetic.com" target="_blank" rel="noopener">Caynetic</a>) | 2026 &ndash; Present</p>
+                        <ul class="list-disc space-y-1 pl-6">
+                            <li>Developed structured Caribbean country brief datasets (public holidays, key dates, tax signals)</li>
+                            <li>Built deterministic automation pipelines for structured content generation</li>
+                            <li>Designed presentation logic optimized for operational planning use cases</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-5 border-t border-zinc-900/20 pt-5">
+                        <p class="font-bold">Software Engineer (Systems Maintenance / Support)</p>
+                        <p>International Private Banking Systems (IPBS) | Jun 2022 &ndash; Sep 2024 | Nassau, Bahamas</p>
+                        <ul class="list-disc space-y-1 pl-6">
+                            <li>Supported internal systems reliability and operational troubleshooting</li>
+                            <li>Assisted in testing, validation, and controlled update deployments</li>
+                            <li>Contributed to maintaining system stability in financial software environments</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-5 border-t border-zinc-900/20 pt-5">
+                        <p class="font-bold">Software Engineer / Consultant | Nassau, Bahamas | 2023 &ndash; Present</p>
+                        <ul class="list-disc space-y-1 pl-6">
+                            <li>Developed OCR-assisted document processing systems for structured extraction</li>
+                            <li>Built structured document generation pipelines with templated outputs</li>
+                            <li>Integrated validation layers to improve data accuracy</li>
+                            <li>Optimized operational workflows through scripting and automation</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="resume-card">
+                    <h2 class="text-2xl font-black">AI Systems &amp; Automation Experience</h2>
+                    <ul class="list-disc space-y-2 pl-6">
+                        <li>Built chatbot infrastructure supporting contextual task execution</li>
+                        <li>Integrated AI APIs into web and messaging platforms (including WhatsApp automation)</li>
+                        <li>Designed structured output formats for predictable downstream processing</li>
+                        <li>Implemented safeguards to detect inconsistencies and reduce hallucinated responses</li>
+                        <li>Built supporting infrastructure for logging, monitoring, and iterative improvement</li>
+                        <li>Worked with evaluation frameworks to assess AI output quality and reasoning</li>
                     </ul>
-                </div>
+                </section>
 
-                <div class="mt-5">
-                    <p class="font-bold">SaaS Product Owner / Lead Developer — <a class="underline decoration-2 underline-offset-4" href="https://caribtrends.com" target="_blank" rel="noopener">CaribTrends</a> (Powered by <a class="underline decoration-2 underline-offset-4" href="https://caynetic.com" target="_blank" rel="noopener">Caynetic</a>) | 2026 – Present</p>
-                    <ul class="mt-2 list-disc space-y-1 pl-6 text-zinc-700">
-                        <li>Designed scalable backend architecture for a Caribbean-focused market intelligence SaaS</li>
-                        <li>Implemented automated insight pipelines with deterministic structured outputs</li>
-                        <li>Built profile-based data segmentation systems for repeatable regional analysis</li>
-                        <li>Engineered maintainable data workflows prioritizing consistency and clarity</li>
+                <section class="resume-card">
+                    <h2 class="text-2xl font-black">Volunteer Experience</h2>
+                    <p class="mt-3 font-semibold">Adventure Learning Center | 2024 &ndash; Present</p>
+                    <ul class="list-disc space-y-1 pl-6">
+                        <li>Assisted in redevelopment efforts and provided ongoing support as needed</li>
                     </ul>
-                </div>
-
-                <div class="mt-5">
-                    <p class="font-bold">Product Developer — <a class="underline decoration-2 underline-offset-4" href="https://caribinsights.com" target="_blank" rel="noopener">CaribInsights</a> (Powered by <a class="underline decoration-2 underline-offset-4" href="https://caynetic.com" target="_blank" rel="noopener">Caynetic</a>) | 2026 – Present</p>
-                    <ul class="mt-2 list-disc space-y-1 pl-6 text-zinc-700">
-                        <li>Developed structured Caribbean country brief datasets (public holidays, key dates, tax signals)</li>
-                        <li>Built deterministic automation pipelines for structured content generation</li>
-                        <li>Designed presentation logic optimized for operational planning use cases</li>
-                    </ul>
-                </div>
-
-                <div class="mt-5">
-                    <p class="font-bold">Software Engineer (Systems Maintenance / Support)</p>
-                    <p class="text-zinc-700">International Private Banking Systems (IPBS) | Jun 2022 – Sep 2024 | Nassau, Bahamas</p>
-                    <ul class="mt-2 list-disc space-y-1 pl-6 text-zinc-700">
-                        <li>Supported internal systems reliability and operational troubleshooting</li>
-                        <li>Assisted in testing, validation, and controlled update deployments</li>
-                        <li>Contributed to maintaining system stability in financial software environments</li>
-                    </ul>
-                </div>
-
-                <div class="mt-5">
-                    <p class="font-bold">Software Engineer / Consultant | Nassau, Bahamas | 2023 – Present</p>
-                    <ul class="mt-2 list-disc space-y-1 pl-6 text-zinc-700">
-                        <li>Developed OCR-assisted document processing systems for structured extraction</li>
-                        <li>Built structured document generation pipelines with templated outputs</li>
-                        <li>Integrated validation layers to improve data accuracy</li>
-                        <li>Optimized operational workflows through scripting and automation</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="rounded-2xl border-2 border-zinc-900 bg-white p-6 shadow-[6px_6px_0_0_#18181b]">
-                <h2 class="text-2xl font-black">AI Systems &amp; Automation Experience</h2>
-                <ul class="mt-3 list-disc space-y-2 pl-6 text-zinc-700">
-                    <li>Built chatbot infrastructure supporting contextual task execution</li>
-                    <li>Integrated AI APIs into web and messaging platforms (including WhatsApp automation)</li>
-                    <li>Designed structured output formats for predictable downstream processing</li>
-                    <li>Implemented safeguards to detect inconsistencies and reduce hallucinated responses</li>
-                    <li>Built supporting infrastructure for logging, monitoring, and iterative improvement</li>
-                    <li>Worked with evaluation frameworks to assess AI output quality and reasoning</li>
-                </ul>
-            </section>
-
-            <section class="rounded-2xl border-2 border-zinc-900 bg-white p-6 shadow-[6px_6px_0_0_#18181b]">
-                <h2 class="text-2xl font-black">Education</h2>
-                <p class="mt-3 font-semibold">Associate of Arts (A.A.), Focus: Computer Science — Santa Fe College | 2022–2024</p>
-                <p class="mt-2 font-semibold">Dual Enrollment — Akhepran International Academy / Bahamas Institute of Technology | 2020</p>
-            </section>
-
-            <section class="rounded-2xl border-2 border-zinc-900 bg-white p-6 shadow-[6px_6px_0_0_#18181b]">
-                <h2 class="text-2xl font-black">Volunteer Experience</h2>
-                <p class="mt-3 font-semibold">Adventure Learning Center | 2024 – Present</p>
-                <ul class="mt-2 list-disc space-y-1 pl-6 text-zinc-700">
-                    <li>Assisted in redevelopment efforts and provided ongoing support as needed</li>
-                </ul>
-            </section>
-
-            <section class="rounded-2xl border-2 border-zinc-900 bg-white p-6 shadow-[6px_6px_0_0_#18181b]">
-                <h2 class="text-2xl font-black">Technical Skills</h2>
-                <div class="mt-3 space-y-2 text-zinc-700">
-                    <p><span class="font-semibold text-zinc-900">Languages:</span> Python (advanced), SQL, HTML/CSS, JavaScript (basic)</p>
-                    <p><span class="font-semibold text-zinc-900">Frameworks:</span> Flask, Django, FastAPI (experience)</p>
-                    <p><span class="font-semibold text-zinc-900">AI &amp; Automation:</span> Prompt engineering, structured output design, function calling / tool orchestration, conversational AI systems, AI API integrations, hallucination mitigation strategies, AI-assisted personalization and summarization, automation scripting</p>
-                    <p><span class="font-semibold text-zinc-900">Automation &amp; Document Systems:</span> OCR tooling, python-docx, workflow scripting, data cleanup and transformation</p>
-                    <p><span class="font-semibold text-zinc-900">Databases:</span> PostgreSQL, MySQL concepts, SQL querying</p>
-                    <p><span class="font-semibold text-zinc-900">Cloud &amp; Systems:</span> Linux, Nginx, DigitalOcean, Cloudflare, deployment and operations fundamentals</p>
-                    <p><span class="font-semibold text-zinc-900">Tools:</span> Git / GitHub, VS Code</p>
-                </div>
-            </section>
-
-            <section class="rounded-2xl border-2 border-zinc-900 bg-yellow-200 p-6 shadow-[6px_6px_0_0_#18181b]">
-                <h2 class="text-2xl font-black">Brand Statement</h2>
-                <p class="mt-3 font-semibold">Based in The Bahamas • Serving the Caribbean</p>
-                <p class="mt-1 font-semibold">Community-first. Region-rooted.</p>
-                <p class="mt-1 font-semibold">Engineered with clarity and security.</p>
-            </section>
+                </section>
+            </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t-2 border-zinc-900 bg-white">
+    <footer class="site-footer">
         <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-6 text-sm">
             <p class="font-medium">Created by Christopher Klein</p>
-            <a href="https://github.com/caynetic/client-cmklein-website" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-semibold hover:underline">
+            <a href="https://github.com/caynetic/client-cmklein-website" target="_blank" rel="noopener" class="footer-github inline-flex items-center gap-2 font-semibold">
                 <i class="fab fa-github"></i> GitHub
             </a>
         </div>
