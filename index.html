@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="static/images/favicon.ico?v=poster-1">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="static/images/favicon.svg?v=poster-1">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/apple-touch-icon.png?v=poster-1">
     
     <title>Home - Christopher Klein</title>
 
@@ -12,25 +14,26 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Christopher Klein">
     <meta name="keywords" content="Christopher Klein, software engineer, portfolio, projects, resume">
-    <meta name="theme-color" content="#ff7ac8">
+    <meta name="theme-color" content="#fcf9f2">
     <meta name="format-detection" content="telephone=no">
 
+    <link rel="preload" href="static/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="static/css/tailwind.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/poster.css">
 
-    <meta property="og:title" content="Christopher Klein — Developer &amp; Founder">
+    <meta property="og:title" content="Christopher Klein — Founder &amp; President, Caynetic Ltd.">
     <meta property="og:description" content="Hand-built digital products for the Caribbean, from SaaS and AI automation to secure infrastructure and websites.">
-    <meta property="og:image" content="https://www.cmklein.com/static/images/portfolio-image.JPG">
+    <meta property="og:image" content="https://www.cmklein.com/static/images/christopher-klein.jpg">
     <meta property="og:url" content="https://www.cmklein.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Christopher Klein Portfolio">
     <meta property="og:locale" content="en_US">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Christopher Klein — Developer &amp; Founder">
+    <meta name="twitter:title" content="Christopher Klein — Founder &amp; President, Caynetic Ltd.">
     <meta name="twitter:description" content="Hand-built digital products for the Caribbean, from SaaS and AI automation to secure infrastructure and websites.">
-    <meta name="twitter:image" content="https://www.cmklein.com/static/images/portfolio-image.JPG">
+    <meta name="twitter:image" content="https://www.cmklein.com/static/images/christopher-klein.jpg">
     <meta name="twitter:url" content="https://www.cmklein.com/">
     <meta name="twitter:site" content="@caynetic">
     
@@ -40,94 +43,150 @@
             "@type": "WebSite",
             "url": "https://www.cmklein.com/",
             "name": "Christopher Klein Portfolio",
-            "description": "Portfolio of Christopher Klein, a Bahamas-based developer and founder building practical Caribbean-first software.",
+            "description": "Portfolio of Christopher Klein, Founder and President of Caynetic Ltd., building software from The Bahamas for the Caribbean.",
             "publisher": {
                 "@type": "Person",
-                "name": "Christopher Klein"
+                "name": "Christopher Klein",
+                "jobTitle": "Founder & President"
             }
         }
         </script>
     
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <script src="static/js/scripts.js" defer></script>
 </head>
-<body class="site-shell antialiased">
-
-    <!-- Navbar -->
-    <nav class="site-nav sticky top-0 z-50">
-        <div class="site-nav-inner mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4">
-            <a class="site-logo text-xl" href="/">cm<span>klein</span></a>
-            <ul class="site-nav-list flex flex-wrap items-center gap-2 text-sm font-semibold">
-                <li><a class="nav-pill nav-pill-active" href="#top">Home</a></li>
-                <li><a class="nav-pill" href="projects.html">Projects</a></li>
-                <li><a class="nav-pill" href="resume.html">Resume</a></li>
-                <li><a class="nav-pill" href="contact.html">Contact</a></li>
-            </ul>
+<body class="site-shell">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="dispatch">
+        <div class="dispatch-inner">
+            <span class="dispatch-name"><span class="dispatch-dot" aria-hidden="true"></span> Christopher Klein / Founder &amp; President</span>
+            <span class="dispatch-place">Nassau, The Bahamas / Serving the Caribbean</span>
         </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="mx-auto max-w-6xl px-4 py-12 sm:py-16">
-        <section class="hero-panel grid gap-10 md:grid-cols-[1.08fr_0.92fr] md:items-center">
-            <div class="space-y-7">
-                <div class="space-y-5">
-                    <h1 class="section-title text-4xl sm:text-6xl">Hand-built digital products for the Caribbean.</h1>
-                    <p class="section-copy max-w-2xl text-base sm:text-lg">I build secure, practical software for real regional workflows &mdash; from SaaS platforms and AI automation to VPN infrastructure, document systems, and websites.</p>
+    </div>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="site-logo" href="index.html" aria-label="cmklein home">cmklein<small>Independent thinking.<br>Regional perspective.</small></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">Menu <i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+            <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
+                <a href="index.html" aria-current="page"><span class="nav-number" aria-hidden="true">01 /</span> Home</a>
+                <a href="projects.html"><span class="nav-number" aria-hidden="true">02 /</span> Projects</a>
+                <a href="resume.html"><span class="nav-number" aria-hidden="true">03 /</span> Resume</a>
+                <a href="contact.html" class="nav-contact"><span class="nav-number" aria-hidden="true">04 /</span> Contact</a>
+            </nav>
+        </div>
+    </header>
+    <main class="poster-main" id="main-content" tabindex="-1">
+        <div class="page-ticker" data-ticker>
+            <div class="ticker-window"><div class="ticker-track"><div class="ticker-group">
+                <span class="ticker-item">Founder &amp; President, Caynetic <i class="fa-solid fa-asterisk" aria-hidden="true"></i></span>
+                <span class="ticker-item">Nassau, The Bahamas <i class="fa-solid fa-asterisk" aria-hidden="true"></i></span>
+                <span class="ticker-item">Building for the Caribbean <i class="fa-solid fa-asterisk" aria-hidden="true"></i></span>
+                <span class="ticker-item">Community first <i class="fa-solid fa-asterisk" aria-hidden="true"></i></span>
+            </div></div></div>
+            <button class="ticker-toggle" type="button" aria-label="Pause scrolling strip" title="Pause scrolling text" hidden><i class="fa-solid fa-pause" aria-hidden="true"></i></button>
+        </div>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <div>
+                    <span class="location-label"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Nassau, The Bahamas</span>
+                    <h1 id="hero-title">
+                        <span>Hand-built</span>
+                        <span>digital products</span>
+                        <span>for the</span>
+                        <mark>Caribbean.</mark>
+                    </h1>
+                    <p class="hero-lead">I build secure, practical software for real regional workflows &mdash; from SaaS platforms and AI automation to VPN infrastructure, document systems, and websites.</p>
                 </div>
-                <div class="flex flex-wrap justify-center gap-3">
-                    <a href="projects.html" class="btn btn-primary"><i class="fa-solid fa-layer-group"></i> View Projects</a>
-                    <a href="contact.html" class="btn btn-secondary"><i class="fa-solid fa-paper-plane"></i> Work With Me</a>
+                <div>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="projects.html">View projects <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        <a class="btn" href="contact.html">Work with me <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                    <p class="hero-note eyebrow">Community first. Region rooted.</p>
                 </div>
             </div>
-            <div class="hero-visual">
-                <img src="static/images/portfolio-image.JPG" alt="Christopher Klein">
+            <div class="portrait-panel">
+                <div>
+                    <div class="plate-title"><span>Fig. 01 / The builder</span><span>Nassau, BS</span></div>
+                    <figure class="portrait-frame">
+                        <div class="portrait-image">
+                            <picture>
+                                <source type="image/webp" srcset="static/images/christopher-klein-480.webp 480w, static/images/christopher-klein-960.webp 960w" sizes="(max-width: 474px) calc(150vw - 124.5px), (max-width: 760px) 609px, (max-width: 1050px) calc(62.5vw - 121.5px), 609px">
+                                <img src="static/images/christopher-klein.jpg" alt="Christopher Klein outside a colorful building" width="960" height="1280" fetchpriority="high" decoding="async">
+                            </picture>
+                        </div>
+                        <figcaption>
+                            <div><strong>Christopher Klein</strong><small>Founder &amp; President, Caynetic Ltd.</small></div>
+                            <span class="plate-tag">Nassau / The Bahamas</span>
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
         </section>
-
-        <section class="mt-16 sm:mt-20">
-            <div class="mb-7 max-w-3xl">
-                <h2 class="section-title text-3xl sm:text-4xl">Who I Am</h2>
-                <p class="section-copy mt-3">I started Caynetic Ltd. in The Bahamas to build Caribbean software for Caribbean people. My work sits across software, automation, banking, insurance, and secure systems, but the through-line is community, privacy, and building things that actually matter.</p>
+        <section class="origin" aria-labelledby="origin-title" data-reveal>
+            <div class="origin-heading">
+                <span class="eyebrow">01 / Origin &amp; intent</span>
+                <h2 class="section-title" id="origin-title">Who<br>I am.</h2>
             </div>
-
-            <div class="grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                <article class="surface-card p-5">
-                    <span class="icon-chip"><i class="fa-solid fa-seedling"></i></span>
-                    <h3 class="mt-4 text-xl font-black">Caribbean Software Builder</h3>
-                    <p class="mt-3">Founder and lead developer of Caynetic Ltd., focused on region-rooted software built around real Caribbean workflows and local market gaps.</p>
-                </article>
-                <article class="surface-card p-5">
-                    <span class="icon-chip"><i class="fa-solid fa-robot"></i></span>
-                    <h3 class="mt-4 text-xl font-black">AI Systems &amp; Automation</h3>
-                    <p class="mt-3">Structured LLM workflows, WhatsApp automation, function calling, validation layers, and practical business process automation.</p>
-                </article>
-                <article class="surface-card p-5">
-                    <span class="icon-chip"><i class="fa-solid fa-shield-halved"></i></span>
-                    <h3 class="mt-4 text-xl font-black">Secure Systems</h3>
-                    <p class="mt-3">VPN infrastructure, Linux production environments, cloud deployments, DNS, monitoring, and privacy-focused tooling.</p>
-                </article>
-                <article class="surface-card p-5">
-                    <span class="icon-chip"><i class="fa-solid fa-file-lines"></i></span>
-                    <h3 class="mt-4 text-xl font-black">Document &amp; Data Workflows</h3>
-                    <p class="mt-3">OCR-assisted extraction, structured document generation, data cleanup, repeatable analysis, and validation-focused tooling.</p>
-                </article>
-                <article class="surface-card p-5">
-                    <span class="icon-chip"><i class="fa-solid fa-hand-holding-heart"></i></span>
-                    <h3 class="mt-4 text-xl font-black">Community First</h3>
-                    <p class="mt-3">Open-source tools, volunteering, accessible software, and helping more Bahamians and Caribbean builders get into tech. Community first. Always.</p>
-                </article>
+            <div class="origin-copy">
+                <p>I&rsquo;m Christopher, Founder and President of <a href="https://caynetic.com" target="_blank" rel="noopener">Caynetic Ltd.</a> My work draws on software, banking, insurance, and automation. I care about privacy, useful tools, and helping more people in our region get into tech.</p>
+                <span class="eyebrow origin-signoff">Christopher Klein / Founder &amp; President</span>
             </div>
+        </section>
+        <section aria-labelledby="practice-title">
+            <div class="section-header">
+                <div><span class="eyebrow">02 / Areas of practice</span><h2 class="section-title" id="practice-title">What I build.</h2></div>
+                <span class="eyebrow">Five areas / One regional perspective</span>
+            </div>
+            <article class="practice-row" data-reveal>
+                <span class="practice-number" aria-hidden="true">01</span><h3>Websites &amp;<br>software</h3>
+                <p>Websites, internal tools, and software shaped around how a business actually works.</p>
+                <span class="practice-icon" aria-hidden="true"><i class="fa-solid fa-seedling"></i></span>
+            </article>
+            <article class="practice-row" data-reveal>
+                <span class="practice-number" aria-hidden="true">02</span><h3>AI systems<br>&amp; automation</h3>
+                <p>Automation that connects messages, business processes, and structured AI outputs.</p>
+                <span class="practice-icon" aria-hidden="true"><i class="fa-solid fa-robot"></i></span>
+            </article>
+            <article class="practice-row" data-reveal>
+                <span class="practice-number" aria-hidden="true">03</span><h3>Secure<br>systems</h3>
+                <p>The infrastructure behind VPNs, cloud deployments, and privacy-focused tools.</p>
+                <span class="practice-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span>
+            </article>
+            <article class="practice-row" data-reveal>
+                <span class="practice-number" aria-hidden="true">04</span><h3>Document &amp;<br>data workflows</h3>
+                <p>Turn documents and messy data into structured, reusable information.</p>
+                <span class="practice-icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span>
+            </article>
+            <article class="practice-row" data-reveal>
+                <span class="practice-number" aria-hidden="true">05</span><h3>Community<br>first</h3>
+                <p>Open-source tools, volunteering, and helping more people in our region get into tech.</p>
+                <span class="practice-icon" aria-hidden="true"><i class="fa-solid fa-hand-holding-heart"></i></span>
+            </article>
+        </section>
+        <section class="feature-teaser" aria-labelledby="featured-title" data-reveal>
+            <div class="feature-teaser-copy">
+                <span class="eyebrow">03 / Featured project</span><h2 id="featured-title">CayneticVPN</h2>
+                <p>A VPN built through Caynetic. See the app and the work behind it. Currently in beta.</p>
+                <a class="btn btn-primary" href="projects.html">Explore the project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+            <figure class="project-overview">
+                <div class="plate-title"><span>Caynetic / Product overview</span><span>01 / VPN</span></div>
+                <picture>
+                    <source type="image/webp" srcset="static/images/projects/cayneticvpn-overview-640.webp 640w, static/images/projects/cayneticvpn-overview-1280.webp 1280w" sizes="(max-width: 760px) calc(100vw - 52px), (max-width: 1400px) calc(50vw - 64px), 636px">
+                    <img src="static/images/projects/cayneticvpn-overview-1280.webp" alt="CayneticVPN artwork illustrating server selection, connection, and encryption" width="1280" height="853" loading="lazy" decoding="async">
+                </picture>
+                <figcaption>Product artwork from <a href="https://caynetic.com" target="_blank" rel="noopener">Caynetic</a></figcaption>
+            </figure>
         </section>
     </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-6 text-sm">
-            <p class="font-medium">Created by Christopher Klein</p>
-            <a href="https://github.com/caynetic/client-cmklein-website" target="_blank" rel="noopener" class="footer-github inline-flex items-center gap-2 font-semibold">
-                <i class="fab fa-github"></i> GitHub
-            </a>
+    <footer class="site-footer standalone-footer">
+        <p>Created by Christopher Klein<br>Based in The Bahamas. Built for the Caribbean.</p>
+        <div class="footer-links">
+            <a href="mailto:me@cmklein.com">Email <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/christopher-klein-8278b6272/" target="_blank" rel="noopener">LinkedIn <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+            <a href="https://github.com/caynetic/client-cmklein-website" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
         </div>
     </footer>
-    
 </body>
 </html>
