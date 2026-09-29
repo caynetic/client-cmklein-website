@@ -61,7 +61,7 @@
     <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="dispatch">
         <div class="dispatch-inner">
-            <span class="dispatch-name"><span class="dispatch-dot" aria-hidden="true"></span> Christopher Klein / Founder &amp; President</span>
+            <span class="dispatch-name"><span class="dispatch-dot" aria-hidden="true"></span> Christopher Klein / Founder &amp; President, Caynetic Ltd.</span>
             <span class="dispatch-place">Nassau, The Bahamas / Serving the Caribbean</span>
         </div>
     </div>
@@ -111,7 +111,9 @@
             <section class="contact-message" aria-labelledby="message-title">
                 <span class="eyebrow">02 / Send a message</span><h2 id="message-title">Your starting point.</h2>
                 <p>A brief outline is enough: the goal, who it&rsquo;s for, and any deadline you have in mind.</p>
+                <div class="contact-form-shell">
                 <form id="contact-form" class="contact-form" novalidate>
+                    <fieldset class="contact-form-fields" aria-label="Your message">
                     <div class="form-row">
                         <div class="form-field"><label for="name">Name <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" class="form-control" autocomplete="name" aria-describedby="name-error" required><span class="form-error" id="name-error"></span></div>
                         <div class="form-field"><label for="email">Email <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" class="form-control" autocomplete="email" aria-describedby="email-error" required><span class="form-error" id="email-error"></span></div>
@@ -121,7 +123,20 @@
                     <div hidden aria-hidden="true"><label for="company">Company</label><input id="company" name="company" autocomplete="off" tabindex="-1"></div>
                     <div id="turnstile-container" class="cf-turnstile" data-sitekey="0x4AAAAAACKOD0Ov9h6v8QXi"></div>
                     <button type="submit" class="btn btn-primary">Send message <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></button>
+                    </fieldset>
                 </form>
+                <div class="contact-overlay" data-contact-overlay hidden>
+                    <div class="contact-feedback" tabindex="-1">
+                        <img class="contact-progress" src="static/images/favicon.svg" width="64" height="64" alt="" aria-hidden="true">
+                        <span class="contact-feedback-icon" aria-hidden="true" hidden><i class="fa-solid fa-check"></i></span>
+                        <div role="status" aria-live="polite" aria-atomic="true">
+                            <h3 class="contact-feedback-title"></h3>
+                            <p class="contact-feedback-copy"></p>
+                        </div>
+                        <button class="btn btn-primary" type="button" data-feedback-close hidden>Back to form <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                </div>
                 <div id="status" class="status hidden" role="status" aria-live="polite" aria-atomic="true"></div>
             </section>
         </div>

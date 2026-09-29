@@ -164,9 +164,44 @@ function renderTurnstile(widget) {
 
 function wireForm(form, status, turnstileEnabled) {
 	const inputs = form.querySelectorAll('input, textarea');
-	const submit = form.querySelector('button[type="submit"]');
-	const submitLabel = submit.innerHTML;
+	const fields = form.querySelector('fieldset');
+	const overlay = form.closest('.contact-form-shell').querySelector('[data-contact-overlay]');
+	const feedback = overlay.querySelector('.contact-feedback');
+	const progress = overlay.querySelector('.contact-progress');
+	const icon = overlay.querySelector('.contact-feedback-icon');
+	const title = overlay.querySelector('.contact-feedback-title');
+	const copy = overlay.querySelector('.contact-feedback-copy');
+	const close = overlay.querySelector('[data-feedback-close]');
 	let sending = false;
+	const showFeedback = (state, heading, message) => {
+		fields.disabled = true;
+		form.inert = true;
+		overlay.dataset.state = state;
+		title.textContent = heading;
+		copy.textContent = message;
+		progress.hidden = state !== 'pending';
+		icon.hidden = state === 'pending';
+		icon.querySelector('i').className = state === 'success' ? 'fa-solid fa-check' : 'fa-solid fa-triangle-exclamation';
+		close.hidden = state === 'pending';
+		close.firstChild.textContent = state === 'success' ? 'Back to form ' : 'Back to message ';
+		overlay.hidden = false;
+		if (state === 'pending') feedback.focus();
+		else close.focus({ preventScroll: true });
+	};
+	const closeFeedback = () => {
+		if (sending) return;
+		overlay.hidden = true;
+		form.inert = false;
+		fields.disabled = false;
+		form.querySelector(overlay.dataset.state === 'success' ? '#name' : '#message').focus();
+	};
+	close.addEventListener('click', closeFeedback);
+	overlay.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape' && !sending) {
+			event.preventDefault();
+			closeFeedback();
+		}
+	});
 	inputs.forEach((el) => {
 		el.addEventListener('input', () => {
 			clearFieldError(el);
@@ -175,7 +210,7 @@ function wireForm(form, status, turnstileEnabled) {
 
 	form.addEventListener('submit', async (event) => {
 		event.preventDefault();
-		if (sending) return;
+		if (sending || !overlay.hidden) return;
 
 		if (!validateForm(form)) {
 			setStatus(status, 'Please check the highlighted fields.', 'error');
@@ -206,31 +241,32 @@ function wireForm(form, status, turnstileEnabled) {
 		};
 
 		sending = true;
-		submit.disabled = true;
-		submit.textContent = 'Sending…';
 		form.setAttribute('aria-busy', 'true');
-		setStatus(status, 'Sending your message…', 'pending');
+		setStatus(status, '', '');
+		showFeedback('pending', 'Sending your message…', 'Please wait a moment.');
+		const controller = new AbortController();
+		const timeout = setTimeout(() => controller.abort(), 30000);
 
 		try {
 			const res = await fetch(contactEndpoint, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(payload)
+				body: JSON.stringify(payload),
+				signal: controller.signal
 			});
 
 			if (res.ok) {
-				setStatus(status, 'Sent successfully', 'success');
 				form.reset();
 				inputs.forEach(clearFieldError);
+				showFeedback('success', 'Message sent.', 'Thanks for reaching out.');
 			} else {
-				setStatus(status, 'Unable to send right now. Please try again.', 'error');
+				showFeedback('error', 'Couldn’t send your message.', 'Your message is still here. Please try again, or use the direct contact links.');
 			}
 		} catch (err) {
-			setStatus(status, 'Unable to send right now. Please try again.', 'error');
+			showFeedback('error', 'Send status unknown.', 'I couldn’t confirm whether your message went through. Please contact me directly before sending it again.');
 		} finally {
+			clearTimeout(timeout);
 			sending = false;
-			submit.disabled = false;
-			submit.innerHTML = submitLabel;
 			form.removeAttribute('aria-busy');
 			if (window.turnstile?.reset && turnstileWidgetId !== null) {
 				window.turnstile.reset(turnstileWidgetId);
