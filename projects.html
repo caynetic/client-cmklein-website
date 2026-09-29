@@ -7,13 +7,13 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="static/images/favicon.svg?v=poster-1">
     <link rel="apple-touch-icon" sizes="180x180" href="static/images/apple-touch-icon.png?v=poster-1">
     
-    <title>CayneticVPN Beta - Christopher Klein</title>
+    <title>Community Projects - Christopher Klein</title>
 
-    <meta name="description" content="CayneticVPN has launched in beta. Learn about Christopher Klein's privacy-focused VPN product built with secure infrastructure and a Caribbean-first perspective.">
+    <meta name="description" content="Community projects by Christopher Klein: Serve the Cays, Catch Da Bus, and CaribbeanSaaS. Connecting people with local service, Nassau's jitney route research, and Caribbean software.">
     <link rel="canonical" href="https://www.cmklein.com/projects.html">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Christopher Klein">
-    <meta name="keywords" content="Christopher Klein projects, CayneticVPN beta, CayneticVPN launched, Caribbean VPN, privacy-focused VPN">
+    <meta name="keywords" content="Christopher Klein projects, Serve the Cays, Catch Da Bus, CaribbeanSaaS, Bahamas community, Caribbean software">
     <meta name="theme-color" content="#fcf9f2">
     <meta name="format-detection" content="telephone=no">
 
@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="static/css/poster.css">
 
-    <meta property="og:title" content="Projects — Christopher Klein">
-    <meta property="og:description" content="CayneticVPN has launched in beta: a privacy-focused VPN product built with secure infrastructure and a Caribbean-first perspective.">
+    <meta property="og:title" content="Community Projects — Christopher Klein">
+    <meta property="og:description" content="Serve the Cays, Catch Da Bus, and CaribbeanSaaS. My work connecting people with local service, route research, and Caribbean software.">
     <meta property="og:image" content="https://www.cmklein.com/static/images/christopher-klein.jpg">
     <meta property="og:url" content="https://www.cmklein.com/projects.html">
     <meta property="og:type" content="website">
@@ -31,8 +31,8 @@
     <meta property="og:locale" content="en_US">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Projects — Christopher Klein">
-    <meta name="twitter:description" content="CayneticVPN has launched in beta: a privacy-focused VPN product built with secure infrastructure and a Caribbean-first perspective.">
+    <meta name="twitter:title" content="Community Projects — Christopher Klein">
+    <meta name="twitter:description" content="Serve the Cays, Catch Da Bus, and CaribbeanSaaS. My work connecting people with local service, route research, and Caribbean software.">
     <meta name="twitter:image" content="https://www.cmklein.com/static/images/christopher-klein.jpg">
     <meta name="twitter:url" content="https://www.cmklein.com/projects.html">
     <meta name="twitter:site" content="@caynetic">
@@ -41,9 +41,14 @@
         {
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            "name": "Projects — Christopher Klein",
+            "name": "Community Projects — Christopher Klein",
             "url": "https://www.cmklein.com/projects.html",
-            "description": "CayneticVPN has launched in beta. It is a privacy-focused VPN product built with secure infrastructure and a Caribbean-first perspective."
+            "description": "Community projects by Christopher Klein: Serve the Cays, Catch Da Bus, and CaribbeanSaaS.",
+            "hasPart": [
+                { "@type": "WebSite", "name": "Serve the Cays", "url": "https://servethecays.com/" },
+                { "@type": "WebSite", "name": "Catch Da Bus", "url": "https://catchdabus.com/" },
+                { "@type": "WebSite", "name": "CaribbeanSaaS", "url": "https://caribbeansaas.com/" }
+            ]
         }
         </script>
     
@@ -73,40 +78,79 @@
     <main class="poster-main" id="main-content" tabindex="-1">
         <div class="page-ticker" data-ticker>
             <div class="ticker-window"><div class="ticker-track"><div class="ticker-group">
-                <span class="ticker-item">My work at Caynetic <i class="fa-solid fa-asterisk" aria-hidden="true"></i></span>
-                <span class="ticker-item">Privacy-focused software <i class="fa-solid fa-asterisk" aria-hidden="true"></i></span>
-                <span class="ticker-item">Tools for everyday problems <i class="fa-solid fa-asterisk" aria-hidden="true"></i></span>
-                <span class="ticker-item">A Caribbean perspective <i class="fa-solid fa-asterisk" aria-hidden="true"></i></span>
+                <span class="ticker-item">Community first <i class="fa-solid fa-asterisk" aria-hidden="true"></i></span>
+                <span class="ticker-item">Serve the Cays <i class="fa-solid fa-asterisk" aria-hidden="true"></i></span>
+                <span class="ticker-item">Catch Da Bus <i class="fa-solid fa-asterisk" aria-hidden="true"></i></span>
+                <span class="ticker-item">CaribbeanSaaS <i class="fa-solid fa-asterisk" aria-hidden="true"></i></span>
             </div></div></div>
             <button class="ticker-toggle" type="button" aria-label="Pause scrolling strip" title="Pause scrolling text" hidden><i class="fa-solid fa-pause" aria-hidden="true"></i></button>
         </div>
-        <section class="page-intro" aria-labelledby="projects-title">
-            <span class="eyebrow">The thinking behind the product</span>
-            <h1 id="projects-title">Selected<br><mark>work.</mark></h1>
-            <p class="intro-copy">A closer look at my current project, from the problem to the interface.</p>
+        <section class="page-intro community-intro" aria-labelledby="projects-title">
+            <span class="eyebrow">Local roots / A shared future</span>
+            <h1 id="projects-title">Built for<br><mark>community.</mark></h1>
+            <p class="intro-copy">The Bahamas is home. These are the projects I&rsquo;m building to help people give back, share local knowledge, and discover what our region has to offer.</p>
         </section>
-        <article class="project-feature" aria-labelledby="vpn-title">
+        <article class="project-feature community-feature" id="serve-the-cays" aria-labelledby="stc-title">
             <div class="project-feature-copy">
-                <span class="project-status">In beta</span>
-                <h2 id="vpn-title">CayneticVPN</h2>
-                <p>Choose a server, manage a connection, and see its status in one place. CayneticVPN brings these everyday controls into an Android app, supported by WireGuard, Linux, and DNS infrastructure.</p>
-                <div class="tag-list" aria-label="Project technologies"><span class="tag">WireGuard</span><span class="tag">Linux</span><span class="tag">DigitalOcean</span><span class="tag">DNS</span><span class="tag">VPN</span></div>
-                <a class="btn btn-primary" href="https://cayneticvpn.com" target="_blank" rel="noopener">Product website <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-                <p class="project-availability">See the product website for current availability.</p>
+                <span class="project-status">Community &amp; volunteering</span>
+                <h2 id="stc-title">Serve the Cays</h2>
+                <p>Giving back starts with knowing where to begin. I created Serve the Cays to bring Bahamian organizations, volunteer opportunities, and community events into one place.</p>
+                <p class="project-personal-note">I lead its design and development through Caynetic, with a simple goal: make it easier to find a cause and take part.</p>
+                <div class="tag-list" aria-label="Project focus"><span class="tag">Volunteering</span><span class="tag">Local organizations</span><span class="tag">The Bahamas</span></div>
+                <a class="btn btn-primary" href="https://servethecays.com/" target="_blank" rel="noopener">Visit Serve the Cays <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
             </div>
             <figure class="project-preview">
-                <div class="plate-title"><span>CayneticVPN / Visual concept</span><span>Project 01</span></div>
+                <div class="plate-title"><span>01 / Giving back</span><span>The Bahamas</span></div>
                 <picture class="project-artwork">
-                    <source type="image/webp" srcset="static/images/projects/cayneticvpn-concept-v1-640.webp 640w, static/images/projects/cayneticvpn-concept-v1-1200.webp 1200w" sizes="(max-width: 612px) calc(100vw - 52px), (max-width: 760px) 560px, (max-width: 1260px) calc(50vw - 70px), 560px">
-                    <img src="static/images/projects/cayneticvpn-concept-v1-1200.webp" alt="CayneticVPN concept artwork: a glass phone with a chartreuse privacy shield, surrounded by connection paths above island-shaped forms" width="1200" height="1200" decoding="async">
+                    <source type="image/webp" srcset="static/images/projects/serve-the-cays-640.webp 640w, static/images/projects/serve-the-cays-1280.webp 1280w" sizes="(max-width: 760px) calc(100vw - 52px), (max-width: 1050px) calc(100vw - 72px), (max-width: 1400px) calc(58.33vw - 70px), 747px">
+                    <img src="static/images/projects/serve-the-cays-1280.webp" alt="Serve the Cays illustration with its island-and-heart logo, community organization cards, and an events directory" width="1280" height="853" decoding="async">
                 </picture>
-                <figcaption>A visual concept for CayneticVPN.</figcaption>
+                <figcaption>Find organizations. Discover events. Get involved.<br>Project illustration from <a href="https://caynetic.com/" target="_blank" rel="noopener">Caynetic</a>.</figcaption>
             </figure>
         </article>
-        <section class="project-details" aria-label="Project background and contribution">
-            <div class="project-detail" data-reveal><span class="eyebrow">01 / The problem</span><h3>Everyday privacy.</h3><p>Make VPN access easier to understand and use, with clear server choices, connection controls, and status information.</p></div>
-            <div class="project-detail" data-reveal><span class="eyebrow">02 / My role</span><h3>Founder &amp; President.</h3><p>I lead development through Caynetic, bringing the product interface and supporting infrastructure together from The Bahamas.</p></div>
-            <div class="project-detail" data-reveal><span class="eyebrow">03 / What I built</span><h3>App &amp; infrastructure.</h3><p>An Android connection experience supported by WireGuard, Linux cloud infrastructure, and DNS configuration.</p></div>
+        <section class="community-note" aria-labelledby="community-note-title" data-reveal>
+            <div><span class="eyebrow">What connects the work</span><h2 id="community-note-title">Local knowledge.<br>More possibility.</h2></div>
+            <p>Where can I help? What do local riders know? Who&rsquo;s building software here? I want to make those answers easier to find, and give people a way to contribute what they know.</p>
+        </section>
+        <section aria-labelledby="more-projects-title">
+            <div class="section-header">
+                <div><span class="eyebrow">02 / More community projects</span><h2 class="section-title" id="more-projects-title">Routes &amp; discovery.</h2></div>
+                <span class="eyebrow">Nassau / Across the Caribbean</span>
+            </div>
+            <div class="community-project-grid">
+                <article class="community-card" aria-labelledby="catch-title" data-reveal>
+                    <figure class="community-card-art">
+                        <picture>
+                            <source type="image/webp" srcset="static/images/projects/catch-da-bus-640.webp 640w, static/images/projects/catch-da-bus-1280.webp 1280w" sizes="(max-width: 760px) calc(100vw - 52px), (max-width: 1400px) calc(50vw - 68px), 632px">
+                            <img src="static/images/projects/catch-da-bus-1280.webp" alt="Catch Da Bus illustration with its turquoise jitney logo, a schematic route map, and local knowledge under review" width="1280" height="853" loading="lazy" decoding="async">
+                        </picture>
+                        <figcaption>Project illustration / Nassau jitney route research</figcaption>
+                    </figure>
+                    <div class="community-card-copy">
+                        <span class="eyebrow">Local transport / Community review</span>
+                        <h3 id="catch-title">Catch Da Bus</h3>
+                        <p>I&rsquo;m building a place to document Nassau&rsquo;s jitney routes, stops, and landmarks. Historical references are a starting point; local riders can share route corrections and recent observations for review.</p>
+                        <p class="project-stage">Current routes and service details are still being checked.</p>
+                        <a class="btn btn-primary" href="https://catchdabus.com/" target="_blank" rel="noopener">Explore Catch Da Bus <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    </div>
+                </article>
+                <article class="community-card community-card--discovery" aria-labelledby="carib-title" data-reveal>
+                    <figure class="community-card-art">
+                        <picture>
+                            <source type="image/webp" srcset="static/images/projects/caribbeansaas-640.webp 640w, static/images/projects/caribbeansaas-1280.webp 1280w" sizes="(max-width: 760px) calc(100vw - 52px), (max-width: 1400px) calc(50vw - 68px), 632px">
+                            <img src="static/images/projects/caribbeansaas-1280.webp" alt="CaribbeanSaaS illustration showing its island technology logo, searchable software listings, category filters, and region filters" width="1280" height="853" loading="lazy" decoding="async">
+                        </picture>
+                        <figcaption>Project illustration / Caribbean software discovery</figcaption>
+                    </figure>
+                    <div class="community-card-copy">
+                        <span class="eyebrow">Regional technology / Software directory</span>
+                        <h3 id="carib-title">Caribbean<wbr>SaaS</h3>
+                        <p>There&rsquo;s more being built in our region than people often see. I built CaribbeanSaaS to help people discover software made in or serving the Caribbean, browse by category and region, and visit each product&rsquo;s own website.</p>
+                        <p class="project-stage">A directory maintained through Caynetic.</p>
+                        <a class="btn btn-primary" href="https://caribbeansaas.com/" target="_blank" rel="noopener">Explore the directory <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
     <section class="footer-inquiry" aria-labelledby="inquiry-title">
