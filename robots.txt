@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.cmklein.com/sitemap.xml
+Sitemap: https://cmklein.com/sitemap.xml

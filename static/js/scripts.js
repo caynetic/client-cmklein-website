@@ -1,4 +1,6 @@
 const contactEndpoint = 'https://inbox.caynetic.online/webforms/submit/cmklein';
+const CONTACT_PENDING_KEY = 'cmklein-contact-pending-v1';
+const CONTACT_TIMEOUT_MS = 30000;
 let turnstileWidgetId = null;
 const turnstileScriptSrc = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
 
@@ -162,9 +164,47 @@ function renderTurnstile(widget) {
 	});
 }
 
+// Store only a submission marker, never contact details or verification tokens.
+function readPendingContact() {
+	try {
+		return sessionStorage.getItem(CONTACT_PENDING_KEY) === '1';
+	} catch {
+		return null;
+	}
+}
+
+function rememberPendingContact(pending) {
+	try {
+		if (pending) sessionStorage.setItem(CONTACT_PENDING_KEY, '1');
+		else sessionStorage.removeItem(CONTACT_PENDING_KEY);
+		return true;
+	} catch {
+		return false;
+	}
+}
+
+function isConfirmedContactRejection(response, body) {
+	// These exact Inbox responses reject the request before attempting delivery.
+	// Token replay, SMTP failures and unrecognized responses remain uncertain.
+	const errors = {
+		400: ['invalid request body', 'missing field: message', 'missing field: turnstile_token',
+			'invalid turnstile token', 'invalid field: name', 'invalid field: email', 'invalid field: phone',
+			'message too long', 'honeypot tripped', 'turnstile_verification_failed'],
+		403: ['missing origin header', 'origin not allowed'],
+		404: ['unknown client'],
+		429: ['rate_limited']
+	};
+	return errors[response.status]?.includes(body?.error) === true;
+}
+
 function wireForm(form, status, turnstileEnabled) {
 	const inputs = form.querySelectorAll('input, textarea');
 	const fields = form.querySelector('fieldset');
+	const submitButton = form.querySelector('[type="submit"]');
+	const pending = readPendingContact();
+	let deliveryPending = pending === true;
+	let storageAvailable = pending !== null;
+	const unknownMessage = 'I couldn’t confirm whether your message went through. Your message is still here. Please contact me directly before sending it again.';
 	const overlay = form.closest('.contact-form-shell').querySelector('[data-contact-overlay]');
 	const feedback = overlay.querySelector('.contact-feedback');
 	const progress = overlay.querySelector('.contact-progress');
@@ -193,6 +233,9 @@ function wireForm(form, status, turnstileEnabled) {
 		overlay.hidden = true;
 		form.inert = false;
 		fields.disabled = false;
+		submitButton.disabled = deliveryPending || !storageAvailable;
+		if (deliveryPending) setStatus(status, unknownMessage, 'error');
+		else if (!storageAvailable) setStatus(status, 'The online form is unavailable in this browser. Please use the direct contact links.', 'error');
 		form.querySelector(overlay.dataset.state === 'success' ? '#name' : '#message').focus();
 	};
 	close.addEventListener('click', closeFeedback);
@@ -210,7 +253,7 @@ function wireForm(form, status, turnstileEnabled) {
 
 	form.addEventListener('submit', async (event) => {
 		event.preventDefault();
-		if (sending || !overlay.hidden) return;
+		if (sending || deliveryPending || !storageAvailable || !overlay.hidden) return;
 
 		if (!validateForm(form)) {
 			setStatus(status, 'Please check the highlighted fields.', 'error');
@@ -240,39 +283,81 @@ function wireForm(form, status, turnstileEnabled) {
 			turnstile_token: token
 		};
 
+		// Persist before sending so reloads cannot silently enable a duplicate.
+		if (!rememberPendingContact(true)) {
+			storageAvailable = false;
+			submitButton.disabled = true;
+			setStatus(status, 'The online form is unavailable in this browser. Please use the direct contact links.', 'error');
+			return;
+		}
+		deliveryPending = true;
+		submitButton.disabled = true;
 		sending = true;
 		form.setAttribute('aria-busy', 'true');
 		setStatus(status, '', '');
 		showFeedback('pending', 'Sending your message…', 'Please wait a moment.');
 		const controller = new AbortController();
-		const timeout = setTimeout(() => controller.abort(), 30000);
+		let timeout;
 
 		try {
-			const res = await fetch(contactEndpoint, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(payload),
-				signal: controller.signal
-			});
+			// Bound both headers and body reads, even if a transport ignores abort.
+			// A late result cannot change the settled UI.
+			const { res, body } = await Promise.race([
+				(async () => {
+					const res = await fetch(contactEndpoint, {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify(payload),
+						signal: controller.signal
+					});
+					const body = await res.json().catch(() => null);
+					return { res, body };
+				})(),
+				new Promise((_, reject) => {
+					timeout = setTimeout(() => {
+						controller.abort();
+						reject(new Error('Contact delivery was not confirmed in time.'));
+					}, CONTACT_TIMEOUT_MS);
+				})
+			]);
 
-			if (res.ok) {
+			if (res.ok && body?.status === 'ok') {
+				deliveryPending = false;
+				storageAvailable = rememberPendingContact(false);
 				form.reset();
 				inputs.forEach(clearFieldError);
 				showFeedback('success', 'Message sent.', 'Thanks for reaching out.');
+			} else if (isConfirmedContactRejection(res, body)) {
+				deliveryPending = false;
+				storageAvailable = rememberPendingContact(false);
+				showFeedback('error', 'Your message was not sent.', res.status === 429
+					? 'Please wait a minute, complete verification, and try again, or use the direct contact links.'
+					: 'Your message is still here. Please check your details and verification, or use the direct contact links.');
 			} else {
-				showFeedback('error', 'Couldn’t send your message.', 'Your message is still here. Please try again, or use the direct contact links.');
+				showFeedback('error', 'Send status unknown.', unknownMessage);
 			}
-		} catch (err) {
-			showFeedback('error', 'Send status unknown.', 'I couldn’t confirm whether your message went through. Please contact me directly before sending it again.');
+		} catch {
+			showFeedback('error', 'Send status unknown.', unknownMessage);
 		} finally {
 			clearTimeout(timeout);
 			sending = false;
 			form.removeAttribute('aria-busy');
+			submitButton.disabled = deliveryPending || !storageAvailable;
 			if (window.turnstile?.reset && turnstileWidgetId !== null) {
 				window.turnstile.reset(turnstileWidgetId);
 			}
 		}
 	});
+
+	// Native submission stays disabled until its prevention handler is installed.
+	fields.disabled = false;
+	submitButton.disabled = deliveryPending || !storageAvailable;
+	document.querySelector('[data-contact-fallback]')?.setAttribute('hidden', '');
+	if (deliveryPending) {
+		setStatus(status, 'An earlier submission is still unconfirmed. Please contact me directly before sending another message.', 'error');
+	} else if (!storageAvailable) {
+		setStatus(status, 'The online form is unavailable in this browser. Please use the direct contact links.', 'error');
+	}
 }
 
 function setStatus(el, text, state) {

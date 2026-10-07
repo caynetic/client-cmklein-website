@@ -1,7 +1,7 @@
-# Résumé PDF
+# Verification scripts
 
-The downloadable résumé is generated from `resume.html`, which is the source of truth for its content.
+`test-contact.mjs` checks the isolated contact form’s native-submission protection, response validation, uncertain-delivery guard, reload behavior and responsive states. Run `npm run test:forms`; see the root README for browser setup. All external requests are intercepted and no email is sent.
 
-Install the PDF dependency in your Python environment with `python3 -m pip install -r scripts/requirements-pdf.txt`, then run `python3 scripts/build-resume-pdf.py` after editing the résumé. The script writes `static/documents/christopher-m-klein-resume.pdf`, which the résumé page links to for download.
+# Historical résumé PDF generator
 
-Inspect both PDF pages after regenerating, and commit the page and PDF together.
+`build-resume-pdf.py` generates a PDF from `resume.html` using `requirements-pdf.txt`. The current résumé page uses the browser print dialog. Regenerate the historical PDF only when that downloadable artifact is explicitly in scope, and inspect both pages before committing it.
