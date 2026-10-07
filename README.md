@@ -1,126 +1,33 @@
-# client-cmklein-website
+# cmklein.com
 
-A modern, responsive portfolio website for Christopher Klein, showcasing projects, skills, and professional information.
+Christopher Klein’s static portfolio: Home, Projects, Résumé and Contact. Cloudflare Pages serves production from this repository.
 
-## 🚀 Features
+## Development
 
-- **Responsive Design**: Mobile-first approach using Bootstrap 5
-- **Multiple Pages**: Home, Projects, Resume, and Contact sections
-- **Contact Form**: Integrated contact form with Cloudflare Turnstile CAPTCHA
-- **SEO Optimized**: Meta tags, structured data, and semantic HTML
-- **Fast Loading**: Optimized static site with CDN resources
-- **Professional Styling**: Clean, modern design with custom CSS
+Use Node.js 20 or newer. Install dependencies with `npm ci`, then run `npm run build:css` after changing HTML or Tailwind classes. Serve the root with a local HTTP server. Production redirects `.html` paths to extensionless routes; a development server should resolve `/projects`, `/resume` and `/contact` to their HTML files.
 
-## 🛠️ Technologies Used
+- `static/css/poster.css`: active editorial theme and responsive layouts.
+- `static/css/tailwind-input.css` and `tailwind.css`: Tailwind input and generated CSS.
+- `static/js/scripts.js`: navigation, motion controls, printing and contact handling.
+- Font Awesome 6.4.0 provides the existing icons.
+- `resume.html` is the résumé content source; its action opens the browser print dialog.
 
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **Framework**: Bootstrap 5.3.0
-- **Icons**: Font Awesome 6.4.0
-- **Backend Integration**: Contact form API endpoint
-- **Security**: Cloudflare Turnstile CAPTCHA
-- **Deployment**: Cloudflare Pages
+## Contact safety
 
-## 📁 Project Structure
+The contact form submits to the existing Caynetic Inbox endpoint with Cloudflare Turnstile. Controls start disabled until JavaScript installs the submission handler; direct contact remains available if loading fails. Only a successful response with `status: "ok"` clears the draft. Recognized validation rejections permit correction and retry. Unknown responses, SMTP errors, token replay and timeouts keep submission locked and direct the visitor to contact Christopher.
 
-```
-client-cmklein-website/
-├── index.html          # Home page
-├── projects.html       # Projects showcase
-├── resume.html         # Resume/CV page
-├── contact.html        # Contact information and form
-├── static/
-│   ├── css/
-│   │   └── styles.css  # Custom styles
-│   ├── js/
-│   │   └── scripts.js  # JavaScript functionality
-│   ├── images/         # Images and favicon
-│   └── robots.txt      # SEO robots file
-└── README.md           # This file
-```
+A submission marker in session storage survives reloads in the same tab. No contact details or verification tokens are stored. If storage is unavailable, use direct contact. This is a browser guard, not server-side idempotency across separate tabs or browsers.
 
-## 🚀 Getting Started
+## Checks
 
-### Prerequisites
+Run `npm run build:css` and `npm run test:forms`. The browser regression suite serves isolated local files and intercepts all external requests; it sends no email. Install its browser with `npx playwright install chromium`, or set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` to a local Chrome/Chromium executable. Optional `CMK_TEST_OUTPUT` saves test screenshots and a JSON result outside the checkout.
 
-- A web browser (Chrome, Firefox, Safari, etc.)
-- Git (for cloning the repository)
-- A local web server (optional, for development)
+On this Mac, run headless Chrome checks through the approved host execution path outside Codex’s sandbox. Keep browser profiles separate from personal sessions. Inspect the form’s mobile, desktop and failure-state screenshots as well as test results.
 
-### Installation
+## Deployment
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/caynetic/client-cmklein-website.git
-   cd client-cmklein-website
-   ```
+Push changes to a feature branch for review. Cloudflare Pages deploys production updates to `main`; pushing a feature branch does not establish production deployment. Verify provider deployment and live source before claiming the changes are live. A real delivery test requires explicit authorization and separate receiving-mailbox confirmation.
 
-2. **Open in browser**
-   - Simply open `index.html` in your web browser
-   - Or use a local server for better development experience:
-     ```bash
-     # Using Python
-     python -m http.server 8000
+## License
 
-     # Using Node.js (if you have http-server installed)
-     npx http-server
-
-     # Then visit http://localhost:8000
-     ```
-
-## 📝 Usage
-
-- **Navigation**: Use the navbar to navigate between different sections
-- **Contact Form**: Fill out the contact form on the contact page
-- **Responsive**: The site works on desktop, tablet, and mobile devices
-
-## 🔧 Development
-
-### File Structure Details
-
-- `static/css/styles.css`: Contains all custom styling
-- `static/js/scripts.js`: Handles contact form functionality and Turnstile integration
-- HTML files use Bootstrap classes for layout and responsiveness
-
-### Customization
-
-1. **Styling**: Modify `static/css/styles.css` for visual changes
-2. **Content**: Edit the HTML files directly for content updates
-3. **Functionality**: Update `static/js/scripts.js` for JavaScript changes
-4. **API Endpoint**: Change the `contactEndpoint` in `scripts.js` if needed
-
-## 📱 Pages
-
-- **Home** (`index.html`): Introduction and overview
-- **Projects** (`projects.html`): Showcase of work and projects
-- **Resume** (`resume.html`): Professional experience and skills
-- **Contact** (`contact.html`): Contact information and form
-
-## 🌐 Deployment
-
-This static website is hosted on Cloudflare Pages. The site is automatically deployed from the GitHub repository.
-
-For local development or manual deployment:
-
-1. Push your code to the GitHub repository: `https://github.com/caynetic/client-cmklein-website`
-2. Cloudflare Pages will automatically build and deploy changes
-3. If deploying manually to other platforms, this is a static site with no build step required
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is private and proprietary. All rights reserved.
-
-## 📞 Contact
-
-Christopher Klein - [GitHub](https://github.com/caynetic/client-cmklein-website)
-
----
-
-*Built with ❤️ by Christopher Klein*
+Private and proprietary. All rights reserved.

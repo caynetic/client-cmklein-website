@@ -10,7 +10,7 @@
     <title>Contact - Christopher Klein</title>
 
     <meta name="description" content="Contact Christopher Klein for software development, Caribbean-first product collaborations, and regional technology partnerships.">
-    <link rel="canonical" href="https://www.cmklein.com/contact.html">
+    <link rel="canonical" href="https://cmklein.com/contact">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Christopher Klein">
     <meta name="keywords" content="Contact Christopher Klein, software developer contact, Caribbean technology partnerships, Caynetic">
@@ -26,8 +26,8 @@
 
     <meta property="og:title" content="Contact — Christopher Klein">
     <meta property="og:description" content="Reach out to Christopher Klein for collaborations, product ideas, and regional partnerships.">
-    <meta property="og:image" content="https://www.cmklein.com/static/images/christopher-klein.jpg">
-    <meta property="og:url" content="https://www.cmklein.com/contact.html">
+    <meta property="og:image" content="https://cmklein.com/static/images/christopher-klein.jpg">
+    <meta property="og:url" content="https://cmklein.com/contact">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Christopher Klein Portfolio">
     <meta property="og:locale" content="en_US">
@@ -35,8 +35,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Contact — Christopher Klein">
     <meta name="twitter:description" content="Reach out to Christopher Klein for collaborations, product ideas, and regional partnerships.">
-    <meta name="twitter:image" content="https://www.cmklein.com/static/images/christopher-klein.jpg">
-    <meta name="twitter:url" content="https://www.cmklein.com/contact.html">
+    <meta name="twitter:image" content="https://cmklein.com/static/images/christopher-klein.jpg">
+    <meta name="twitter:url" content="https://cmklein.com/contact">
     <meta name="twitter:site" content="@caynetic">
     
         <script type="application/ld+json">
@@ -44,7 +44,7 @@
             "@context": "https://schema.org",
             "@type": "ContactPage",
             "name": "Contact — Christopher Klein",
-            "url": "https://www.cmklein.com/contact.html",
+            "url": "https://cmklein.com/contact",
             "mainEntity": {
                 "@type": "Person",
                 "name": "Christopher Klein",
@@ -67,13 +67,13 @@
     </div>
     <header class="site-header">
         <div class="header-inner">
-            <a class="site-logo" href="index.html" aria-label="cmklein home">cmklein<small>Independent thinking.<br>Regional perspective.</small></a>
+            <a class="site-logo" href="/" aria-label="cmklein home">cmklein<small>Independent thinking.<br>Regional perspective.</small></a>
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">Menu <i class="fa-solid fa-bars" aria-hidden="true"></i></button>
             <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
-                <a href="index.html"><span class="nav-number" aria-hidden="true">01 /</span> Home</a>
-                <a href="projects.html"><span class="nav-number" aria-hidden="true">02 /</span> Projects</a>
-                <a href="resume.html"><span class="nav-number" aria-hidden="true">03 /</span> Resume</a>
-                <a href="contact.html" class="nav-contact" aria-current="page"><span class="nav-number" aria-hidden="true">04 /</span> Contact</a>
+                <a href="/"><span class="nav-number" aria-hidden="true">01 /</span> Home</a>
+                <a href="/projects"><span class="nav-number" aria-hidden="true">02 /</span> Projects</a>
+                <a href="/resume"><span class="nav-number" aria-hidden="true">03 /</span> Resume</a>
+                <a href="/contact" class="nav-contact" aria-current="page"><span class="nav-number" aria-hidden="true">04 /</span> Contact</a>
             </nav>
         </div>
     </header>
@@ -111,9 +111,10 @@
             <section class="contact-message" aria-labelledby="message-title">
                 <span class="eyebrow">02 / Send a message</span><h2 id="message-title">Your starting point.</h2>
                 <p>A brief outline is enough: the goal, who it&rsquo;s for, and any deadline you have in mind.</p>
+                <p class="form-hint" data-contact-fallback>The online form is unavailable until it finishes loading. You can <a href="mailto:me@cmklein.com">email me directly</a> or use the contact links.</p>
                 <div class="contact-form-shell">
-                <form id="contact-form" class="contact-form" novalidate>
-                    <fieldset class="contact-form-fields" aria-label="Your message">
+                <form id="contact-form" class="contact-form" method="post" action="contact.html" novalidate>
+                    <fieldset class="contact-form-fields" aria-label="Your message" disabled>
                     <div class="form-row">
                         <div class="form-field"><label for="name">Name <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" class="form-control" autocomplete="name" aria-describedby="name-error" required><span class="form-error" id="name-error"></span></div>
                         <div class="form-field"><label for="email">Email <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" class="form-control" autocomplete="email" aria-describedby="email-error" required><span class="form-error" id="email-error"></span></div>
@@ -122,7 +123,7 @@
                     <div class="form-field"><label for="message">Message <span aria-hidden="true">*</span></label><textarea id="message" name="message" class="form-control" maxlength="2000" autocomplete="off" aria-describedby="message-hint message-error" required></textarea><span class="form-hint" id="message-hint">Up to 2,000 characters. Fields marked * are required.</span><span class="form-error" id="message-error"></span></div>
                     <div hidden aria-hidden="true"><label for="company">Company</label><input id="company" name="company" autocomplete="off" tabindex="-1"></div>
                     <div id="turnstile-container" class="cf-turnstile" data-sitekey="0x4AAAAAACKOD0Ov9h6v8QXi"></div>
-                    <button type="submit" class="btn btn-primary">Send message <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></button>
+                    <button type="submit" class="btn btn-primary" disabled>Send message <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></button>
                     </fieldset>
                 </form>
                 <div class="contact-overlay" data-contact-overlay hidden>
